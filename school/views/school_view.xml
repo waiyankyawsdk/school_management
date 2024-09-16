@@ -213,7 +213,7 @@
                         <page string="Subjects">
                             <field name="subject_ids" nolabel="1" colspan="4" string="Add Subjects" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
                         </page>
-                        <page string="Syllabus" attrs="{'invisible': [('total_no_subjects', '&lt;', 1)]}">
+                        <page string="Syllabus" invisible="total_no_subjects<1">
                             <group>
                                 <field name="syllabus_ids" nolabel="1" colspan="4" context="{'default_standard_id':standard_id}">
                                     <tree editable="top" string="Syllabs">
@@ -668,7 +668,7 @@
                                     <page string="Teachers">
                                         <field name="teacher_ids" nolabel="1" colspan="4" />
                                     </page>
-                                    <page string="Students" attrs="{'invisible':[('elective_id','!=',True)]}">
+                                    <page string="Students" invisible ="elective_id != 1">
                                         <field name="student_ids" nolabel="1" />
                                     </page>
                                 </notebook>
@@ -714,7 +714,7 @@
                             <field name="teacher_ids" nolabel="1" colspan="4"
                                  options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
                         </page>
-                        <page string="Students" attrs="{'invisible':[('elective_id','!=',True)]}">
+                        <page string="Students" invisible="elective_id != 1">
                             <field name="student_ids" nolabel="1" />
                         </page>
                     </notebook>

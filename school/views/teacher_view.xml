@@ -104,7 +104,7 @@
                         <group>
                             <field name="is_parent" widget="boolean_toggle"/>
                             <field name='stu_parent_id'
-                                attrs="{'invisible':[('is_parent','=',False)],'required': [('is_parent','!=',False)]}"/>
+                                invisible="not is_parent" required="is_parent"/>
                         </group>
                         <notebook>
                             <page name="public" string="Public Information">
@@ -146,7 +146,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Children" attrs="{'invisible': [('is_parent','=', False)]}">
+                            <page string="Children" invisible="is_parent == False">
                                  <field name="student_id" domain="[('state', '=', 'done')]"/>
                             </page>
                             <page string="HR Settings" groups="hr.group_hr_user" invisible="1">

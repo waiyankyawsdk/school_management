@@ -76,7 +76,7 @@
                     <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" default_focus="1" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                            <field name="name" default_focus="1" placeholder="Name" required="type =='contact'"/>
                         </h1>
                     </div>
                     <div>
