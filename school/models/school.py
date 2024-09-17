@@ -450,9 +450,9 @@ class SchoolSchool(models.Model):
         "res.company",
         "Company",
         ondelete="cascade",
-        required=True,
         delegate=True,
         help="Company_id of the school",
+        default=lambda self: self.env.company
     )
     com_name = fields.Char(
         "School Name",
@@ -479,13 +479,13 @@ class SchoolSchool(models.Model):
                                   student admission""",
     )
 
-    @api.model
-    def create(self, vals):
-        """Inherited create method to assign company_id to school"""
-        res = super(SchoolSchool, self).create(vals)
-        main_company = self.env.ref("base.main_company")
-        res.company_id.parent_id = main_company.id
-        return res
+    # @api.model
+    # def create(self, vals):
+    #     """Inherited create method to assign company_id to school"""
+    #     res = super(SchoolSchool, self).create(vals)
+    #     main_company = self.env.ref("base.main_company")
+    #     res.company_id.parent_id = main_company.id
+    #     return res
 
 
 class SubjectSubject(models.Model):
