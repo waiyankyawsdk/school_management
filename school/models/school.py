@@ -430,6 +430,8 @@ class SchoolSchool(models.Model):
     _description = "School Information"
     _rec_name = "com_name"
 
+    name = fields.Char(string="School Name")
+
     @api.constrains("code")
     def _check_code(self):
         for record in self:

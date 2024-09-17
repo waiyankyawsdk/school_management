@@ -46,7 +46,7 @@
                                         <ul>
                                             <li t-if="record.school_id.raw_value"><field name="school_id" /></li>
                                             <li t-if="record.job_id.raw_value"><field name="job_id" /></li>
-                                            <li t-if="record.phone"><field name="phone" /></li>
+<!--                                            <li t-if="record.phone"><field name="phone" /></li>-->
                                             <li t-if="record.work_email.raw_value"><field name="work_email" /></li>
                                         </ul>
                                     </div>
@@ -132,11 +132,11 @@
                                         <field name="country_id" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
                                         <field name="identification_id" groups="hr.group_hr_user"/>
                                         <field name="passport_id" groups="hr.group_hr_user"/>
-                                        <field name="bank_account_id"/>
+<!--                                        <field name="bank_account_id"/>-->
                                     </group>
-                                    <group string="Contact Information">
-                                        <field name="address_home_id" context="{'show_address': 1}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}"/>
-                                    </group>
+<!--                                    <group string="Contact Information">-->
+<!--                                        <field name="address_home_id" context="{'show_address': 1}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}"/>-->
+<!--                                    </group>-->
                                     <group string="Status">
                                         <field name="gender"/>
                                         <field name="marital"/>
