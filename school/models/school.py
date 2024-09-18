@@ -550,36 +550,36 @@ class SubjectSubject(models.Model):
                 _("Configure Maximum marks greater than minimum marks!")
             )
 
-    @api.model
-    def _search(
-        self,
-        args,
-        offset=0,
-        limit=None,
-        order=None,
-        count=False,
-        access_rights_uid=None,
-    ):
-        """Override method to get exam of subject selection."""
-        if (
-            self._context.get("is_from_subject_report")
-            and self._context.get("active_model")
-            and self._context.get("active_id")
-        ):
-
-            teacher_rec = self.env[self._context.get("active_model")].browse(
-                self._context.get("active_id")
-            )
-            sub_ids = [sub_id.id for sub_id in teacher_rec.subject_id]
-            args.append(("id", "in", sub_ids))
-        return super(SubjectSubject, self)._search(
-            args=args,
-            offset=offset,
-            limit=limit,
-            order=order,
-            count=count,
-            access_rights_uid=access_rights_uid,
-        )
+    # @api.model
+    # def _search(
+    #     self,
+    #     args,
+    #     offset=0,
+    #     limit=None,
+    #     order=None,
+    #     count=False,
+    #     access_rights_uid=None,
+    # ):
+    #     """Override method to get exam of subject selection."""
+    #     if (
+    #         self._context.get("is_from_subject_report")
+    #         and self._context.get("active_model")
+    #         and self._context.get("active_id")
+    #     ):
+    #
+    #         teacher_rec = self.env[self._context.get("active_model")].browse(
+    #             self._context.get("active_id")
+    #         )
+    #         sub_ids = [sub_id.id for sub_id in teacher_rec.subject_id]
+    #         args.append(("id", "in", sub_ids))
+    #     return super(SubjectSubject, self)._search(
+    #         args=args,
+    #         offset=offset,
+    #         limit=limit,
+    #         order=order,
+    #         count=count,
+    #         access_rights_uid=access_rights_uid,
+    #     )
 
 
 class SubjectSyllabus(models.Model):
