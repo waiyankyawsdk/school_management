@@ -8,9 +8,9 @@
         <field name="arch" type="xml">
             <form string="Student Information" create="false" delete="false">
                 <header>
-                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" readonly="state =='done'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" readonly="state=='done'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" readonly="state=='draft'" groups="school.group_school_administration" />
+                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
                     <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>
                 </header>
                 <sheet>
@@ -425,10 +425,10 @@
         <field name="arch" type="xml">
             <form string="Admission Register">
                 <header>
-                    <button class="oe_highlight oe_stat_button" name="set_terminate" string="Terminate" type="object" icon="fa-ban" invisible="state =='done'" groups="school.group_school_administration"/>
-                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state=='done'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state=='draft'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" icon="fa-ban" name="cancel_admission" type="object" string="Cancel" invisible="state=='draft'" groups="school.group_school_administration"/>
+                    <button class="oe_highlight oe_stat_button" name="set_terminate" string="Terminate" type="object" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration"/>
+                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" icon="fa-ban" name="cancel_admission" type="object" string="Cancel" invisible="state!='draft'" groups="school.group_school_administration"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,cancel"/>
                 </header>
                 <sheet>
