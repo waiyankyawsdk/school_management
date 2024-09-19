@@ -458,8 +458,8 @@
                             <field name="company_id" invisible="1"/>
                         </group>
                         <group string="Class Information">
-                            <field name="medium_id" placeholder="Medium" widget="selection" readonly="state == 'alumni'"/>
-                            <field name="standard_id" placeholder="Class" domain="[('school_id','=',school_id),('medium_id','=',medium_id)]" widget="selection" readonly="state == 'alumni'"/>
+<!--                            <field name="medium_id" placeholder="Medium" widget="selection" readonly="state == 'alumni'"/>-->
+                            <field name="standard_id" placeholder="Class" domain="[('school_id','=',school_id)]" widget="selection" readonly="state == 'alumni'"/>
                             <field name="division_id" placeholder="Division" widget="selection" readonly="state == 'alumni'" invisible="1"/>
 
                         </group>
@@ -469,7 +469,7 @@
                             <label for="street" string="Address" />
                             <div class="o_address_format">
                                 <field name="street" placeholder="Street..." class="o_address_street" readonly="state == 'alumni'"/>
-                                <field name="street2" placeholder="Street2..." class="o_address_street" readonly="state == 'alumni'"/>
+<!--                                <field name="street2" placeholder="Street2..." class="o_address_street" readonly="state == 'alumni'"/>-->
                                 <field name="country_id" placeholder="Country" class="o_address_country,oe_no_button" required="1" options="{&quot;no_open&quot;: True}" readonly="state == 'alumni'"/>
                                 <field name="city" placeholder="City" class="o_address_city" required="1" readonly="state == 'alumni'"/>
                                 <field name="state_id" class="o_address_state" domain="[('country_id','=',country_id)]" placeholder="State" options="{&quot;no_open&quot;: True}" required="1" readonly="state == 'alumni'"/>
@@ -478,7 +478,7 @@
                         </group>
                         <group>
                             <field name="phone" placeholder="Phone Number" readonly="state == 'alumni'"/>
-                            <field name="mobile" placeholder="Mobile Number" readonly="state == 'alumni'"/>
+<!--                            <field name="mobile" placeholder="Mobile Number" readonly="state == 'alumni'"/>-->
                             <field name="email" placeholder="Email Address" String="Email" readonly="state == 'alumni'"/>
                             <field name="website" widget="url" placeholder="e.g. www.serpentcs.com" readonly="state == 'alumni'"/>
                         </group>
@@ -494,7 +494,7 @@
                                             <field name="age" />
                                         </group>
                                         <group>
-                                            <field name="mother_tongue" widget="selection" placeholder="Mother Tongue" readonly="state == 'alumni'"/>
+<!--                                            <field name="mother_tongue" widget="selection" placeholder="Mother Tongue" readonly="state == 'alumni'"/>-->
                                             <field name="admission_date" placeholder="Admission Date" readonly="state == 'alumni'"/>
                                             <field name="maritual_status" placeholder="Select Maritual Status" readonly="state == 'alumni'"/>
                                         </group>
@@ -503,7 +503,7 @@
                                         <newline />
                                         <group colspan="4" col="4">
                                             <field name="contact_phone" readonly="state == 'alumni'" placeholder="Phone Number"/>
-                                            <field name="contact_mobile" readonly="state == 'alumni'" placeholder="Mobile Number"/>
+<!--                                            <field name="contact_mobile" readonly="state == 'alumni'" placeholder="Mobile Number"/>-->
                                         </group>
                                     </group>
                                 </sheet>

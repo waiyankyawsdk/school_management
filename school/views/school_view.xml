@@ -180,7 +180,7 @@
                     <group col="4" colspan="4">
                         <field name="standard_id" widget="selection" placeholder="Standard"/>
                         <field name="division_id" widget="selection" placeholder="Division"/>
-                        <field name="medium_id" widget="selection" placeholder="Medium"/>
+<!--                        <field name="medium_id" widget="selection" placeholder="Medium"/>-->
                         <field name="school_id" widget="selection" placeholder="School"/>
                         <field name="user_id" placeholder="Select Faculty Name"
                             widget="selection"/>
@@ -246,7 +246,7 @@
                 <field name="standard_id"/>
                 <field name="user_id"/>
                 <field name="division_id"/>
-                <field name="medium_id"/>
+<!--                <field name="medium_id"/>-->
                 <field name="remaining_seats"/>
             </tree>
         </field>
@@ -510,35 +510,35 @@
         </field>
     </record>
     <!-- From View Of Standard Medium Information -->
-    <record id="view_standard_medium_form" model="ir.ui.view">
-        <field name="name">standard.medium.form</field>
-        <field name="model">standard.medium</field>
-        <field name="arch" type="xml">
-            <form string="Medium">
-                <sheet>
-                    <group col="4" colspan="4">
-                        <field name="sequence" />
-                        <field name="name" placeholder="Name" />
-                        <field name="code" placeholder="Code" />
-                        <newline />
-                        <field name="description" colspan="4" placeholder="Description"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+<!--    <record id="view_standard_medium_form" model="ir.ui.view">-->
+<!--        <field name="name">standard.medium.form</field>-->
+<!--        <field name="model">standard.medium</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Medium">-->
+<!--                <sheet>-->
+<!--                    <group col="4" colspan="4">-->
+<!--                        <field name="sequence" />-->
+<!--                        <field name="name" placeholder="Name" />-->
+<!--                        <field name="code" placeholder="Code" />-->
+<!--                        <newline />-->
+<!--                        <field name="description" colspan="4" placeholder="Description"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
     <!-- Tree View Of Standard Medium Information -->
-    <record id="view_standard_medium_tree" model="ir.ui.view">
-        <field name="name">standard.medium.tree</field>
-        <field name="model">standard.medium</field>
-        <field name="arch" type="xml">
-            <tree string="Medium">
-                <field name="sequence" />
-                <field name="name" />
-                <field name="code" />
-            </tree>
-        </field>
-    </record>
+<!--    <record id="view_standard_medium_tree" model="ir.ui.view">-->
+<!--        <field name="name">standard.medium.tree</field>-->
+<!--        <field name="model">standard.medium</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Medium">-->
+<!--                <field name="sequence" />-->
+<!--                <field name="name" />-->
+<!--                <field name="code" />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
     <!-- From View Of Student Document Type -->
     <record id="view_document_type_form" model="ir.ui.view">
         <field name="name">document.type.form</field>
@@ -566,33 +566,33 @@
         </field>
     </record>
     <!-- Form View of mother Tongue -->
-    <record id="mother_tongue_form_view" model="ir.ui.view">
-        <field name="name">mother tongue</field>
-        <field name="model">mother.toungue</field>
-        <field name="arch" type="xml">
-            <form string="Mother Tongue">
-                <group>
-                    <field name="name" required="1"/>
-                </group>
-            </form>
-        </field>
-    </record>
+<!--    <record id="mother_tongue_form_view" model="ir.ui.view">-->
+<!--        <field name="name">mother tongue</field>-->
+<!--        <field name="model">mother.toungue</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Mother Tongue">-->
+<!--                <group>-->
+<!--                    <field name="name" required="1"/>-->
+<!--                </group>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
     <!-- Tree View of Mother Tongue -->
-    <record id="mother_tongue_tree_view" model="ir.ui.view">
-        <field name="name">Mother Tongue</field>
-        <field name="model">mother.toungue</field>
-        <field name="arch" type="xml">
-            <tree string="Mother Tongue" editable="top">
-                <field name="name" required="1"/>
-            </tree>
-        </field>
-    </record>
+<!--    <record id="mother_tongue_tree_view" model="ir.ui.view">-->
+<!--        <field name="name">Mother Tongue</field>-->
+<!--        <field name="model">mother.toungue</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Mother Tongue" editable="top">-->
+<!--                <field name="name" required="1"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
     <!-- Action of mother Toungue -->
-    <record id="action_mother_toungue" model="ir.actions.act_window">
-        <field name="name">Mother Tongue</field>
-        <field name="res_model">mother.toungue</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record id="action_mother_toungue" model="ir.actions.act_window">-->
+<!--        <field name="name">Mother Tongue</field>-->
+<!--        <field name="res_model">mother.toungue</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
     <!-- Action Of Form & Tree Views Of Student Document Type -->
     <record id="action_document_type_form" model="ir.actions.act_window">
         <field name="name">Document Type</field>
@@ -826,11 +826,11 @@
         <field name="view_mode">tree,form</field>
     </record>
     <!-- Action Of Form & Tree Views Of Standard Medium Information -->
-    <record id="action_standard_medium_form" model="ir.actions.act_window">
-        <field name="name">Medium</field>
-        <field name="res_model">standard.medium</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record id="action_standard_medium_form" model="ir.actions.act_window">-->
+<!--        <field name="name">Medium</field>-->
+<!--        <field name="res_model">standard.medium</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
     <!-- Action Of Form & Tree Views Of Standard Division Information Action -->
     <record id="action_standard_division_form" model="ir.actions.act_window">
         <field name="name">Divisions</field>
@@ -963,7 +963,7 @@
     <menuitem id="menu_sub_doc_type_sub_form" name="Document Type" parent="menu_school_config_form1" action="action_document_type_form" />
     <menuitem id="submenu_sub_grade" name="Grade" parent="menu_school_config_form1" action="action_grade_master_form" />
     <menuitem id="submenu_sub_news" name="Noticeboard" parent="menu_school_config_form1" action="view_student_news" />
-    <menuitem id="mother_tongue_menu" name="Mother Tongue" parent="menu_school_config_form1" action="action_mother_toungue" groups="school.group_school_administration"/>
+<!--    <menuitem id="mother_tongue_menu" name="Mother Tongue" parent="menu_school_config_form1" action="action_mother_toungue" groups="school.group_school_administration"/>-->
     <menuitem id="menu_school_school_sub_form" name="School" parent="menu_school_config_form1" action="action_school_school_form" />
     <!-- MenuItem For Configurations->Academic Years -->
     <menuitem id="menu_academic_year_form" name="Academic Years" parent="menu_configuration" />
@@ -974,7 +974,7 @@
     <menuitem id="menu_sub_school_standard_form" name="Classes" parent="menu_school_standard_form" action="action_school_standard_form" />
     <menuitem id="menu_standard_standard_form" name="Standards" parent="menu_school_standard_form" action="action_standard_standard_form" />
     <menuitem id="menu_standard_division_form" name="Divisions" parent="menu_school_standard_form" action="action_standard_division_form" />
-    <menuitem id="menu_standard_medium_form" name="Medium" parent="menu_school_standard_form" action="action_standard_medium_form" />
+<!--    <menuitem id="menu_standard_medium_form" name="Medium" parent="menu_school_standard_form" action="action_standard_medium_form" />-->
     <menuitem id="menu_class_room" name="Class Room" parent="menu_school_standard_form" action="action_class_room"/>
     <!-- MenuItem For Configurations->Subject -->
     <menuitem id="menu_subject_subject_form" name="Subjects" parent="menu_configuration" sequence="10" />
