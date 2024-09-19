@@ -356,13 +356,15 @@ class StudentStudent(models.Model):
         help="Activate/Deactivate teacher group",
     )
     upload_file = fields.Binary(
-        "Attachment File",
+        "Attachment File (.pdf)",
         required=True,
         help="Student certificate",
         attachment=True
     )
-    igcse= fields.Boolean("IGCSE")
-    ged = fields.Boolean("GED")
+    education_type = fields.Selection([
+        ('ged', 'GED'),
+        ('igcse', 'IGCSE')
+    ], string='Education Type', required=True, default='ged')
     file_name = fields.Char(string='File Name')  # Optional: Store file name
 
     @api.model

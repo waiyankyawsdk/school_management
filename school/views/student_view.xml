@@ -485,11 +485,13 @@
                     </group>
                     <group string="High School Certificate">
                         <group>
-                            <field name="igcse"/>
-                            <field name="ged"/>
+                            <field name="education_type" widget="radio"/>
                         </group>
-                        <field name="upload_file" filename="file_name" widget="binary" placeholder="Upload Assignment"/>
-                        <field name="file_name" invisible="1"/> <!-- This field is hidden and holds the file name -->
+                        <group col="2">
+                            <field name="upload_file" filename="file_name" widget="binary" placeholder="Upload Assignment"/>
+                            <field name="file_name" invisible="1"/> <!-- This field is hidden and holds the file name -->
+                        </group>
+
                     </group>
                     <notebook colspan="4">
                         <page string="General">
