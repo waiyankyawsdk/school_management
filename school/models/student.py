@@ -355,6 +355,15 @@ class StudentStudent(models.Model):
         compute="_compute_teacher_user",
         help="Activate/Deactivate teacher group",
     )
+    upload_file = fields.Binary(
+        "Attachment File",
+        required=True,
+        help="Student certificate",
+        attachment=True
+    )
+    igcse= fields.Boolean("IGCSE")
+    ged = fields.Boolean("GED")
+    file_name = fields.Char(string='File Name')  # Optional: Store file name
 
     @api.model
     def create(self, vals):
