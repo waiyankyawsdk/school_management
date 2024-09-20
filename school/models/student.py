@@ -160,7 +160,6 @@ class StudentStudent(models.Model):
     )
     middle = fields.Char(
         "Middle Name",
-        required=True,
         states={"done": [("readonly", True)]},
         help="Enter student middle name",
     )

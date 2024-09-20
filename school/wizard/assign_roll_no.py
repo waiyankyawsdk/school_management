@@ -10,7 +10,7 @@ class AssignRollNo(models.TransientModel):
     _description = "Assign Roll Number"
 
     standard_id = fields.Many2one("school.standard", "Class", required=True)
-    medium_id = fields.Many2one("standard.medium", "Medium", required=True)
+    medium_id = fields.Many2one("standard.medium", "Medium")
 
     def assign_rollno(self):
         """Method to assign roll no to students"""

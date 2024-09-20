@@ -12,7 +12,7 @@
                     <separator string="Assign Roll Number" colspan="4"/>
                     <group colspan="4" col="6">
                         <field name="standard_id" widget="selection" />
-                        <field name="medium_id" widget="selection"  />
+<!--                        <field name="medium_id" widget="selection"  />-->
                     </group>
                    <footer>
                        <button class="btn btn-sm btn-default fa fa-ban" special="cancel" string="Close"/>

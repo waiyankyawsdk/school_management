@@ -17,9 +17,17 @@
                                 </td>
                             </tr>
                             <tr>
+<!--                                <td align="top" colspan="1">-->
+<!--                                    <img t-if="student.photo"-->
+<!--                                        t-att-src="'data:image/png;base64,%s' % to_text(student.photo)" style="max-height: 130px; max-width: 130px;"/>-->
+<!--                                </td>-->
                                 <td align="top" colspan="1">
-                                    <img t-if="student.photo"
-                                        t-att-src="'data:image/png;base64,%s' % to_text(student.photo)" style="max-height: 130px; max-width: 130px;"/>
+                                    <t t-if="student.photo">
+                                        <img t-att-src="'data:image/png;base64,%s' % student.photo" style="max-height: 130px; max-width: 130px;"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img src="/web/static/src/img/placeholder.png" style="max-height: 130px; max-width: 130px;"/>
+                                    </t>
                                 </td>
                                 <td align="left">
                                     <table width="100%">
@@ -76,9 +84,9 @@
                                             <td>
                                                 <strong>: </strong>
                                             </td>
-                                            <td>
-                                                <span t-field="student.medium_id.name" />
-                                            </td>
+<!--                                            <td>-->
+<!--                                                <span t-field="student.medium_id.name" />-->
+<!--                                            </td>-->
                                         </tr>
                                         <tr>
                                             <td style="font-family: 'Helvetica';padding-left:20px;">

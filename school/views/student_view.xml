@@ -25,13 +25,15 @@
                         <field name="photo" widget="image" readonly= "state in ['alumni','terminate']" class="oe_avatar oe_left" style="max-width:100px;max-height:117px;"/>
                         <div class="oe_title">
                             <group>
-                                <field name="name" placeholder="First Name" nolabel="1" required="1" readonly="state in ['alumni','terminate']"/>
-                                <br />
-                                <field name="middle" placeholder="Middle Name" nolabel="1" readonly="state in ['alumni','terminate']"/>
-                                <br />
-                                <field name="last" placeholder="Last Name" nolabel="1" readonly="state in ['alumni','terminate']"/>
-                                <br />
-                                <field name="pid" invisible="1"/>
+                                <field name="pid" nolabel="1" readonly="1"/>
+                                <br/>
+                                <field name="name" placeholder="First Name" nolabel="1" required="1" readonly="state == 'alumni'" class="o_field_large"/>
+                                <br/>
+                                <!-- Add the Last Name field with a custom class for more space -->
+                                <field name="last" placeholder="Last Name" nolabel="1" readonly="state == 'alumni'" class="o_field_large"
+                                style="width: 400px;"/>
+                                <br/>
+                                <field name="active" invisible="1"/>
                             </group>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                         <group string="Standard Information">
                             <field name="standard_id" placeholder="Standard" readonly="state in ['alumni','terminate']" domain="[('school_id','=',school_id)]" widget="selection" />
                             <field name="division_id" placeholder="Division" invisible="1" widget="selection" readonly="state in ['alumni','terminate']"/>
-                            <field name="medium_id" placeholder="Medium"  readonly="state in ['alumni','terminate']" widget="selection"/>
+<!--                            <field name="medium_id" placeholder="Medium"  readonly="state in ['alumni','terminate']" widget="selection"/>-->
                         </group>
                     </group>
                     <group>
@@ -323,9 +325,9 @@
                 <filter name="alumni" string="Alumni" domain="[('state','=', 'alumni')]" help="Admission In Confirm State"/>
                 <filter name="terminate" string="Terminated" domain="[('state','=', 'terminate')]" help="Admission In Pending State"/>
                 <filter name="done" string="Done" domain="[('state','=', 'done')]" help="Admission In Done State"/>
-                <filter name="english" string="English Medium" domain="[('medium_id.name','ilike', 'English')]" help="Admission In English Medium"/>
-                <filter name="french" string="French Medium" domain="[('medium_id.name','ilike', 'French')]" help="Admission In French Medium"/>
-                <filter name="urdu" string="Urdu Medium" domain="[('medium_id.name','ilike', 'Urdu')]" help="Admission In Urdu Medium"/>
+<!--                <filter name="english" string="English Medium" domain="[('medium_id.name','ilike', 'English')]" help="Admission In English Medium"/>-->
+<!--                <filter name="french" string="French Medium" domain="[('medium_id.name','ilike', 'French')]" help="Admission In French Medium"/>-->
+<!--                <filter name="urdu" string="Urdu Medium" domain="[('medium_id.name','ilike', 'Urdu')]" help="Admission In Urdu Medium"/>-->
             </search>
         </field>
     </record>
@@ -440,11 +442,11 @@
                             <group>
                                 <field name="pid" nolabel="1" readonly="1"/>
                                 <br />
-                                <field name="name" placeholder="First Name" nolabel="1" required="1" readonly="state == 'alumni'"/>
-                                <br />
-                                <field name="middle" placeholder="Middle Name" nolabel="1" readonly="state == 'alumni'"/>
-                                <br />
-                                <field name="last" placeholder="Last Name" nolabel="1" readonly="state == 'alumni'"/>
+                                <field name="name" placeholder="First Name" nolabel="1" required="1" readonly="state == 'alumni'" class="o_field_large"/>
+                                <br/>
+                                <!-- Add the Last Name field with a custom class for more space -->
+                                <field name="last" placeholder="Last Name" nolabel="1" readonly="state == 'alumni'" class="o_field_large"
+                                style="width: 400px;"/>
                                 <br/>
                                 <field name="active" invisible="1"/>
                             </group>
@@ -486,11 +488,10 @@
                     <group string="High School Certificate">
                         <group>
                             <field name="education_type" widget="radio"/>
-                        </group>
-                        <group col="2">
                             <field name="upload_file" filename="file_name" widget="binary" placeholder="Upload Assignment"/>
                             <field name="file_name" invisible="1"/> <!-- This field is hidden and holds the file name -->
                         </group>
+
 
                     </group>
                     <notebook colspan="4">
@@ -506,7 +507,7 @@
                                         <group>
 <!--                                            <field name="mother_tongue" widget="selection" placeholder="Mother Tongue" readonly="state == 'alumni'"/>-->
                                             <field name="admission_date" placeholder="Admission Date" readonly="state == 'alumni'"/>
-                                            <field name="maritual_status" placeholder="Select Maritual Status" readonly="state == 'alumni'"/>
+<!--                                            <field name="maritual_status" placeholder="Select Maritual Status" readonly="state == 'alumni'"/>-->
                                         </group>
                                         <newline />
                                         <separator string="Emergency Contact Details" colspan="4" />

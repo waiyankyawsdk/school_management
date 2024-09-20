@@ -200,7 +200,7 @@
                         <group col="2" string="Standard Information">
                             <field name="standard_id" placeholder="Standard" widget="selection" readonly="state != 'draft'"/>
                             <field name="division_id" placeholder="Division" widget="selection" readonly="state != 'draft'"/>
-                            <field name="medium_id" placeholder="Medium" widget="selection" readonly="state != 'draft'"/>
+<!--                            <field name="medium_id" placeholder="Medium" widget="selection" readonly="state != 'draft'"/>-->
                         </group>
                     </group>
                     <group col="4">

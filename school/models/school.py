@@ -318,7 +318,6 @@ class SchoolStandard(models.Model):
     medium_id = fields.Many2one(
         "standard.medium",
         "Medium",
-        required=True,
         help="Medium of the standard",
     )
     subject_ids = fields.Many2many(
@@ -428,7 +427,7 @@ class SchoolSchool(models.Model):
 
     _name = "school.school"
     _description = "School Information"
-    _rec_name = "com_name"
+    _rec_name = "name"
 
     name = fields.Char(string="School Name")
 
