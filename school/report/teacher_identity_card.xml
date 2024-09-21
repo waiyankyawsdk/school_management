@@ -17,10 +17,18 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="top">
-                                    <img t-if="teacher.avatar_128"
-                                        t-att-src="'data:image/png;base64,%s' % to_text(teacher.avatar_128)"/>
-                                </td>
+<!--                                <td align="top">-->
+<!--                                    <img t-if="teacher.avatar_128"-->
+<!--                                        t-att-src="'data:image/png;base64,%s' % to_text(teacher.avatar_128)"/>-->
+<!--                                </td>-->
+<!--                                <td align="top" colspan="1">-->
+<!--                                    <t t-if="student.photo">-->
+<!--                                        <img t-att-src="'data:image/png;base64,%s' % student.photo" style="max-height: 130px; max-width: 130px;"/>-->
+<!--                                    </t>-->
+<!--                                    <t t-else="">-->
+<!--                                        <img src="/web/static/src/img/placeholder.png" style="max-height: 130px; max-width: 130px;"/>-->
+<!--                                    </t>-->
+<!--                                </td>-->
                                 <td align="left">
                                     <table width="100%">
                                         <tr>

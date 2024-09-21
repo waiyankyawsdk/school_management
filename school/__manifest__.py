@@ -4,6 +4,7 @@
     "name": "School",
     "version": "17.0.1.0.0",
     "author": "Serpent Consulting Services Pvt. Ltd.",
+    'sequence': -100,
     "website": "http://www.serpentcs.com",
     "category": "School Management",
     "license": "LGPL-3",

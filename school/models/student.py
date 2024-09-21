@@ -138,6 +138,9 @@ class StudentStudent(models.Model):
     photo = fields.Binary(
         "Photo", default=_default_image, help="Attach student photo"
     )
+    # Field to hold the base64 string of the photo
+    photo_base64 = fields.Char(compute='_compute_photo_base64', store=False)
+
     year = fields.Many2one(
         "academic.year",
         "Academic Year",
@@ -365,6 +368,25 @@ class StudentStudent(models.Model):
         ('igcse', 'IGCSE')
     ], string='Education Type', required=True, default='ged')
     file_name = fields.Char(string='File Name')  # Optional: Store file name
+
+    # @api.depends('photo')
+    # def _compute_photo_base64(self):
+    #     """Compute base64 encoding of the photo."""
+    #     for record in self:
+    #         if record.photo:
+    #             # Encoding the photo as base64 string
+    #             record.photo_base64 = base64.b64encode(record.photo).decode('utf-8')
+    #         else:
+    #             record.photo_base64 = False
+
+    @api.depends('photo')
+    def _compute_photo_base64(self):
+        for record in self:
+            record.photo_base64 = base64.b64encode(record.photo or b'').decode('utf-8')
+
+    photo_base64 = fields.Char(compute="_compute_photo_base64", store=True)
+
+
 
     @api.model
     def create(self, vals):

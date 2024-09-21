@@ -85,6 +85,9 @@
             <field name="model">school.teacher</field>
             <field name="arch" type="xml">
                 <form string="Faculty">
+                    <header>
+                        <button name="%(report_school_school_identity_card)d" type="action" string="Print Teacher Identify Card" class="btn-primary"/>
+                    </header>
                     <sheet>
                         <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;avatar_128&quot;}"/>
                         <field name="company_id" invisible="1"/>

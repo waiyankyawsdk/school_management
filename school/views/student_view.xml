@@ -8,6 +8,8 @@
         <field name="arch" type="xml">
             <form string="Student Information" create="false" delete="false">
                 <header>
+                    <!-- Report Button -->
+                    <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
                     <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />
                     <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
                     <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
