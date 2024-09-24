@@ -22,13 +22,24 @@
 <!--                                        t-att-src="'data:image/png;base64,%s' % to_text(student.photo)" style="max-height: 130px; max-width: 130px;"/>-->
 <!--                                </td>-->
                                 <td align="top" colspan="1">
+                                    <!-- Check if the student's photo is available in base64 format -->
                                     <t t-if="student.photo_base64">
-                                        <img t-att-src="'data:image/png;base64,' + student.photo_base64" style="max-height: 130px; max-width: 130px;"/>
+                                        <!-- Render the base64 image with the correct MIME type (assumed to be PNG) -->
+                                        <img t-att-src="'data:image/png;base64,' + student.photo_base64"
+                                             style="max-height: 130px; max-width: 130px;"
+                                             onerror="this.src='/static/description/hacker.jpg';"/>
                                     </t>
                                     <t t-else="">
+                                        <!-- If no base64 image is found, use a placeholder image -->
                                         <img src="/static/description/hacker.jpg" style="max-height: 130px; max-width: 130px;"/>
                                     </t>
                                 </td>
+<!--                                <td align="top" colspan="1">-->
+<!--                                    <t t-field="student.student_img"-->
+<!--                                       t-options="{'widget':'image','img_style':'width:50px;height:50px;','width':50,'height':50}"-->
+<!--                                    />-->
+<!--                                </td>-->
+
 
 
                                 <td align="left">

@@ -85,14 +85,17 @@
                             groups="school.group_school_teacher,school.group_school_administration"/>
                     </div>
                     <separator string="Exam Detail"/>
-                    <group col="4" colspan="4" readonly="state != 'draft'">
-                        <separator colspan="4" col="4" />
-                        <field name="exam_code"/>
-                        <field name="name" placeholder="Exam Name" readonly="state != 'draft'"/>
-                        <field name="grade_system" required="1" readonly="state != 'draft'" widget="selection"/>
-                        <field name="academic_year" placeholder="Select Academic Year.." widget="selection" required="1" readonly="state != 'draft'"/>
-                        <field name="start_date" readonly="state != 'draft'" placeholder="Start Date" required="1"/>
-                        <field name="end_date" readonly="state != 'draft'" placeholder="End Date" required="1"/>
+                    <group readonly="state != 'draft'">
+                        <group>
+                            <field name="name" placeholder="Exam Name" readonly="state != 'draft'"/>
+                            <field name="exam_code"/>
+                            <field name="grade_system" required="1" readonly="state != 'draft'" widget="selection"/>
+                        </group>
+                        <group>
+                            <field name="academic_year" placeholder="Select Academic Year.." widget="selection" required="1" readonly="state != 'draft'"/>
+                            <field name="start_date" readonly="state != 'draft'" placeholder="Start Date" required="1"/>
+                            <field name="end_date" readonly="state != 'draft'" placeholder="End Date" required="1"/>
+                        </group>
                     </group>
                     <group col="4" colspan="4">
                         <notebook colspan="4" >
@@ -259,8 +262,8 @@
     </record>
 
     <!-- Menu Item Of Additional Exam -->
-    <menuitem id="additional_exam" name="Additional Exams" parent="menu_exam" sequence="103"/>
-    <menuitem id="menu_additional_exam_sub_form" name="Additional Exam" parent="additional_exam" action="action_additional_exam_form" sequence="104"/>
+<!--    <menuitem id="additional_exam" name="Additional Exams" parent="menu_exam" sequence="103"/>-->
+<!--    <menuitem id="menu_additional_exam_sub_form" name="Additional Exam" parent="additional_exam" action="action_additional_exam_form" sequence="104"/>-->
 
     <!-- Tree View Of Result Information -->
     <record id="view_exam_result_tree" model="ir.ui.view">
@@ -543,7 +546,7 @@
     </record>
 
     <!-- Menu Item Of Additional Exam Result -->
-    <menuitem id="menu_additional_exam_result" name="Additional Exam Results" parent="additional_exam"
-              action="action_additional_exam_result_form01" sequence="105"/>
+<!--    <menuitem id="menu_additional_exam_result" name="Additional Exam Results" parent="additional_exam"-->
+<!--              action="action_additional_exam_result_form01" sequence="105"/>-->
 
 </odoo>

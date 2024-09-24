@@ -203,26 +203,26 @@ class TimeTableLine(models.Model):
 class SubjectSubject(models.Model):
     _inherit = "subject.subject"
 
-    @api.model
-    def _search(
-        self,
-        args,
-        offset=0,
-        limit=None,
-        order=None,
-        count=False,
-        access_rights_uid=None,
-    ):
-        """Override method to get subject related to teacher."""
-        teacher_id = self._context.get("teacher_id")
-        if teacher_id:
-            for teacher_data in self.env["school.teacher"].browse(teacher_id):
-                args.append(("teacher_ids", "in", [teacher_data.id]))
-        return super(SubjectSubject, self)._search(
-            args=args,
-            offset=offset,
-            limit=limit,
-            order=order,
-            count=count,
-            access_rights_uid=access_rights_uid,
-        )
+    # @api.model
+    # def _search(
+    #     self,
+    #     args,
+    #     offset=0,
+    #     limit=None,
+    #     order=None,
+    #     count=False,
+    #     access_rights_uid=None,
+    # ):
+    #     """Override method to get subject related to teacher."""
+    #     teacher_id = self._context.get("teacher_id")
+    #     if teacher_id:
+    #         for teacher_data in self.env["school.teacher"].browse(teacher_id):
+    #             args.append(("teacher_ids", "in", [teacher_data.id]))
+    #     return super(SubjectSubject, self)._search(
+    #         args=args,
+    #         offset=offset,
+    #         limit=limit,
+    #         order=order,
+    #         count=count,
+    #         access_rights_uid=access_rights_uid,
+    #     )

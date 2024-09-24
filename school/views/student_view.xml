@@ -10,7 +10,7 @@
                 <header>
                     <!-- Report Button -->
                     <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
-                    <button name="set_alumni" type="object" string="Print Preview"/>
+                    <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>
                     <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />
                     <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
                     <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
@@ -79,13 +79,14 @@
                                 <group>
                                     <field name="cast_id" readonly="state in ['alumni','terminate']" widget="selection" placeholder="Religion/Caste"/>
                                     <field name="date_of_birth" widget="date" placeholder="Birthdate" readonly="state in ['alumni','terminate']"/>
-                                    <field name="gender" readonly="state in ['alumni','terminate']" placeholder="Gender" required="1"/>
-                                    <field name="age"/>
+
                                 </group>
                                 <group>
-                                    <field name="mother_tongue" readonly="state in ['alumni','terminate']"  widget="selection" placeholder="Mother Tounge"/>
+                                    <field name="gender" readonly="state in ['alumni','terminate']" placeholder="Gender" required="1"/>
+                                    <field name="age"/>
+<!--                                    <field name="mother_tongue" readonly="state in ['alumni','terminate']"  widget="selection" placeholder="Mother Tounge"/>-->
                                     <field name="admission_date" widget="date" placeholder="Admission Date" readonly="state in ['alumni','terminate']"/>
-                                    <field name="maritual_status" readonly="state in ['alumni','terminate']" placeholder="Maritial Status"/>
+<!--                                    <field name="maritual_status" readonly="state in ['alumni','terminate']" placeholder="Maritial Status"/>-->
                                 </group>
                                 <newline />
                                 <separator string="Emergency Contact Details" colspan="4" />
