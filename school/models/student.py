@@ -24,6 +24,7 @@ class StudentStudent(models.Model):
     _table = "student_student"
     _description = "Student Information"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    # _inherit = "res.partner"
 
     # @api.model
     # def _search(
@@ -115,11 +116,20 @@ class StudentStudent(models.Model):
     )
     student_name = fields.Char(
         "Student Name",
-        related="user_id.name",
+        # related="user_id.name",
+        # realated="last",
+        compute="_compute_full_name",
         store=True,
         readonly=True,
         help="Student Name",
     )
+    # student_name = fields.Char(
+    #     "Full Name",
+    #     compute="_compute_full_name",
+    #     store=True,
+    #     readonly=True,
+    #     help="Full Name combining first and last names",
+    # )
     pid = fields.Char(
         "Student ID",
         required=True,
@@ -169,6 +179,8 @@ class StudentStudent(models.Model):
     last = fields.Char(
         "Surname",
         required=True,
+        # related='user_id.last',
+        store=True,
         states={"done": [("readonly", True)]},
         help="Enter student last name",
     )
@@ -386,7 +398,12 @@ class StudentStudent(models.Model):
 
     photo_base64 = fields.Char(compute="_compute_photo_base64", store=True)
 
-
+    @api.depends('user_id.name', 'last')
+    def _compute_full_name(self):
+        for record in self:
+            first_name = record.user_id.name or ''
+            last_name = record.last or ''
+            record.student_name = f"{first_name} {last_name}".strip()
 
     @api.model
     def create(self, vals):

@@ -61,6 +61,13 @@ class StudentFeesRegister(models.Model):
         default=lambda self: self.env.user.company_id,
         help="Select related company",
     )
+    school_id = fields.Many2one(
+        "school.school",
+        "School",
+        states={"done": [("readonly", True)]},
+        help="Select school",
+        tracking=True,
+    )
     fees_structure = fields.Many2one(
         "student.fees.structure", "Fees Structure", help="Fee structure"
     )
