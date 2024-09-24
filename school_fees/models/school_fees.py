@@ -222,7 +222,13 @@ class StudentFeesStructureLine(models.Model):
         string="Symbol",
         help="Select currency symbol",
     )
-
+    school_id = fields.Many2one(
+        "school.school",
+        "School",
+        states={"done": [("readonly", True)]},
+        help="Select school",
+        tracking=True,
+    )
     @api.onchange("company_id")
     def set_currency_company(self):
         for rec in self:

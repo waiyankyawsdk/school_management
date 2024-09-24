@@ -133,7 +133,7 @@
                     <field name="product_id"/>
                     <field name="account_id" required="1"/>
                     <field name="amount" readonly="1" force_save="1"/>
-                    <field name="company_id"/>
+                    <field name="school_id"/>
                     <field name="currency_id"/>
                     <field name="currency_symbol"/>
                 </group>
@@ -178,6 +178,7 @@
             <form string="Student Payslip">
                 <header>
                     <button name="payslip_confirm" class="fa fa-check" string="Confirm" invisible="state not in 'draft'" type="object" groups="school.group_school_administration"/>
+                    <button name="payslip_draft" class="fa fa-times" string="Draft" invisible="state not in ['confirm','pending']" type="object" groups="school.group_school_administration"/>
                     <button name="student_pay_fees" class="fa fa-share" string="Payment" invisible="state not in 'confirm'" type="object" groups="school.group_school_administration"/>
                     <field name="state" widget="statusbar" readonly="1"/>
                 </header>
@@ -209,7 +210,7 @@
                         <field name="journal_id" widget="selection" placeholder="Journal" domain="[('type','=','sale')]" readonly="state != 'draft'"/>
                         <notebook colspan="4">
                             <page string="Fees Structure">
-                                <field name="line_ids" colspan="4" nolabel="1" readonly="1"/>
+                                <field name="line_ids" colspan="4" nolabel="1"/>
                                 <separator string="" colspan="4"/>
                                 <group class="oe_subtotal_footer oe_right" colspan="2">
                                     <field name="total"/>
@@ -297,7 +298,7 @@
                             <field name="school_id" string = "School" placeholder="School Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>
                         </group>
                     </group>
-                    <group string="Fees Register for" col="4" colspan="4">
+                    <group string="Fees Register for">
                         <field name="fees_structure" placeholder="Fee structure" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>
                         <field name="standard_id" placeholder="Select Class" readonly="state != 'draft'"
                             required="1" widget="selection"/>
