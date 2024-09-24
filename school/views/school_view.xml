@@ -976,11 +976,11 @@
     <menuitem id="menu_academic_month_form" name="Months" parent="menu_academic_year_form" action="action_academic_month_form" />
     <!-- MenuItem For Configurations->Standards -->
     <menuitem id="menu_school_standard_form" name="Standards" parent="menu_configuration" />
-    <menuitem id="menu_sub_school_standard_form" name="Classes" parent="menu_school_standard_form" action="action_school_standard_form" />
-    <menuitem id="menu_standard_standard_form" name="Standards" parent="menu_school_standard_form" action="action_standard_standard_form" />
-    <menuitem id="menu_standard_division_form" name="Divisions" parent="menu_school_standard_form" action="action_standard_division_form" />
+    <menuitem id="menu_standard_standard_form" name="Standards" parent="menu_school_standard_form" action="action_standard_standard_form" sequence="10"/>
+    <menuitem id="menu_sub_school_standard_form" name="Classes" parent="menu_school_standard_form" action="action_school_standard_form" sequence="20" />
+    <menuitem id="menu_standard_division_form" name="Divisions" parent="menu_school_standard_form" action="action_standard_division_form" sequence="30"/>
 <!--    <menuitem id="menu_standard_medium_form" name="Medium" parent="menu_school_standard_form" action="action_standard_medium_form" />-->
-    <menuitem id="menu_class_room" name="Class Room" parent="menu_school_standard_form" action="action_class_room"/>
+    <menuitem id="menu_class_room" name="Class Room" parent="menu_school_standard_form" action="action_class_room" sequence="40"/>
     <!-- MenuItem For Configurations->Subject -->
     <menuitem id="menu_subject_subject_form" name="Subjects" parent="menu_configuration" sequence="10" />
     <menuitem id="menu_subject_subject_sub_form" name="Subjects" parent="menu_subject_subject_form" action="action_subject_subject_form" />

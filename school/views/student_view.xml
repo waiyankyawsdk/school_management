@@ -7,13 +7,34 @@
         <field name="model">student.student</field>
         <field name="arch" type="xml">
             <form string="Student Information" create="false" delete="false">
+<!--                <header>-->
+<!--                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />-->
+<!--                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />-->
+<!--                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />-->
+<!--                    &lt;!&ndash; Report Button &ndash;&gt;-->
+<!--                    <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>-->
+<!--                    <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>-->
+<!--                    &lt;!&ndash;                    <button name="action_student_student_form_2" type="action" string="Reset To Register"/>&ndash;&gt;-->
+<!--                    <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>-->
+<!--                </header>-->
                 <header>
-                    <!-- Report Button -->
-                    <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
-                    <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>
-                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
-                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
+                    <div class="oe_button_box">
+                        <!-- Left Position: Alumni and Terminate Buttons -->
+                        <div class="oe_left">
+                            <button
+                                    class="oe_stat_button"
+                                    name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
+                            <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state != 'done'" groups="school.group_school_administration" />
+                        </div>
+
+                        <!-- Right Position: Print Preview and Print ID Buttons -->
+                        <div class="oe_right">
+                            <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
+                            <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>
+                        </div>
+                    </div>
+
+                    <!-- Status Bar -->
                     <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>
                 </header>
                 <sheet>
@@ -69,7 +90,7 @@
                             <field name="phone" placeholder="Phone Number" readonly="state in ['alumni','terminate']"/>
                             <field name="mobile" placeholder="Mobile Number" readonly="state in ['alumni','terminate']"/>
                             <field name="email" placeholder="Email Address" String="Email" readonly="state in ['alumni','terminate']"/>
-                            <field name="website" widget="url" placeholder="e.g. www.serpentcs.com" readonly="state in ['alumni','terminate']"/>
+<!--                            <field name="website" widget="url" placeholder="e.g. www.serpentcs.com" readonly="state in ['alumni','terminate']"/>-->
                             <field name="teachr_user_grp" invisible="1"/>
                         </group>
                     </group>
