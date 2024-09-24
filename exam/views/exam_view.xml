@@ -286,7 +286,7 @@
         <field name="name">exam.results.form</field>
         <field name="model">exam.result</field>
         <field name="arch" type="xml">
-            <form string="Results" create="false">
+            <form string="Results">
                 <header>
                     <button name="result_confirm" class="oe_stat_button fa fa-check" string="Confirm" invisible="state in 'draft'" type="object" groups="school.group_school_administration,school.group_school_teacher"/>
                     <button name="result_re_evaluation" class="oe_stat_button fa fa-retweet" string="Re-Evaluation" invisible= "state in 'confirm,re-access,re-access_confirm'" type="object" groups="school.group_school_administration,school.group_school_teacher"/>
