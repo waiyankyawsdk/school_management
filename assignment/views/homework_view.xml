@@ -8,7 +8,7 @@
         <field name="model">school.teacher.assignment</field>
         <field name="arch" type="xml">
             <tree string="Assignment Information">
-                <field name="name" />
+                <field name="assignment_name" />
                 <field name="teacher_id" select="1"/>
                 <field name="standard_id"/>
                 <field name="subject_id" />
@@ -28,7 +28,7 @@
             <search string="Assignment Information">
                 <filter string="Active" name="active_assign" domain="[('state','=','active')]"/>
                 <separator orientation="vertical"/>
-                <field name="name"/>
+                <field name="assignment_name"/>
                 <field name="teacher_id"/>
                 <field name="standard_id"/>
                 <field name="subject_id"/>
@@ -55,13 +55,14 @@
             <form string="Assignment Information" >
                 <header>
                     <button name="active_assignment" class="oe_stat_button fa fa-check" invisible="state not in 'draft'" string="Active Assignment" type="object"/>
+                    <button name="draft_assignments" invisible="state not in 'active'" string="Draft" type="object"/>
                     <button name="done_assignments" invisible="state not in 'active'" string="Done" type="object"/>
                     <field name="state" widget="statusbar" readonly="1"/>
                 </header>
                 <sheet>
                 <separator string="Teacher Assignment" colspan="4"/>
                 <group col="4" colspan="4">
-                    <field name="name" placeholder="Assignment Name" readonly="state != 'draft'"/>
+                    <field name="assignment_name" placeholder="Assignment Name" readonly="state != 'draft'"/>
                     <field name="teacher_id" placeholder="Teacher Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True, &quot;no_search&quot;: True}"/>
                 </group>
                 <group col="4" string="Subject and Dates">
@@ -82,7 +83,7 @@
                 </group>
                 <notebook>
                     <page string="Student Assignment Details">
-                        <field name="student_assign_ids" readonly="1">
+                        <field name="student_assign_ids">
                             <tree>
                                 <field name="stud_roll_no"/>
                                 <field name="student_id"/>
@@ -126,14 +127,14 @@
                 </header>
                 <sheet>
                     <separator colspan="4"/>
-                    <group col="4" string="Assignment Information">
+                    <group string="Assignment Information">
                         <field name="student_id" placeholder="Student" readonly="state != 'draft'" options="{&quot;no_create&quot;: True, &quot;no_search&quot;: True}" domain="[('state','=','done')]"/>
                         <field name="stud_roll_no" invisible="1"/>
-                        <field name="name" placeholder="Assignment Name" readonly="state != 'draft'"/>
+                        <field name="assignment_names" placeholder="Assignment Name" readonly="state != 'draft'"/>
                         <newline />
                         <field name="teacher_id" placeholder="Teacher" readonly="state != 'draft'" options="{&quot;no_create&quot;: True, &quot;no_search&quot;: True}"/>
                     </group>
-                    <group col="4" string="Standard and Division">
+                    <group string="Standard and Division">
                         <field name="standard_id" placeholder="Class" readonly="state != 'draft'" widget="selection"/>
                         <field name="subject_id" placeholder="Subject" readonly="state != 'draft'" widget="selection" domain="[('teacher_ids','in',teacher_id),('standard_ids','in',student_standard)]"/>
                     </group>
@@ -169,7 +170,7 @@
         <field name="arch" type="xml">
             <tree string="Assignment Information">
                 <field name="student_id"/>
-                <field name="name"/>
+                <field name="assignment_names"/>
                 <field name="teacher_id"/>
                 <field name="subject_id"/>
                 <field name="standard_id"/>
@@ -189,7 +190,7 @@
         <field name="arch" type="xml">
             <search string="Assignment Information">
                 <separator orientation="vertical"/>
-                <field name="name" />
+                <field name="assignment_names" />
                 <field name="student_id"/>
                 <field name="teacher_id"/>
                 <field name="standard_id"/>

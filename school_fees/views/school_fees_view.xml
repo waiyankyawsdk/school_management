@@ -78,8 +78,8 @@
                         <field name="amount" />
                         <field name="account_id" options="{&quot;no_create&quot;: True}"/>
 <!--                        <field name="company_id"/>-->
-                        <field name="currency_id" invisible="0"/>
-                        <field name="currency_symbol" invisible="0"/>
+<!--                        <field name="currency_id" invisible="0"/>-->
+<!--                        <field name="currency_symbol" invisible="0"/>-->
                     </group>
                     <group col="2" invisible="type == 'range'" string="Description">
                         <field name="description" />
@@ -134,8 +134,8 @@
                     <field name="account_id" required="1"/>
                     <field name="amount" readonly="1" force_save="1"/>
                     <field name="school_id"/>
-                    <field name="currency_id"/>
-                    <field name="currency_symbol"/>
+<!--                    <field name="currency_id"/>-->
+<!--                    <field name="currency_symbol"/>-->
                 </group>
                 <notebook colspan="4">
                     <page string="Function">
@@ -205,7 +205,7 @@
                         </group>
                     </group>
                     <group col="4">
-                        <separator string="Fees Structure" colspan="4"/>
+                        <separator string="Fees Structure"/>
                         <field name="fees_structure_id" required="1" placeholder="Fee Structure" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>
                         <field name="journal_id" widget="selection" placeholder="Journal" domain="[('type','=','sale')]" readonly="state != 'draft'"/>
                         <notebook colspan="4">
@@ -221,8 +221,8 @@
                             <page string="Other Information">
                                 <group col="4" colspan="4">
                                     <field name="type"  placeholder="Type" readonly="state != 'draft'"/>
-                                    <field name="currency_id" placeholder="Currency" readonly="state != 'draft'"/>
-                                    <field name="currency_symbol" invisible="0"/>
+<!--                                    <field name="currency_id" placeholder="Currency" readonly="state != 'draft'"/>-->
+<!--                                    <field name="currency_symbol" invisible="0"/>-->
                                     <field name="move_id" readonly="state != 'draft'"/>
                                     <field name="payment_date" placeholder="Payment Date" readonly="state != 'draft'"/>
 <!--                                    <field name="company_id" string = "School" placeholder="School Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>-->

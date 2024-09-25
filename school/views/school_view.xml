@@ -866,12 +866,12 @@
                     <button string="Send Mail" class="btn btn-sm btn-default fa fa-envelope" type="object" name="news_update" colspan="2" />
                 </header>
                 <sheet>
-                    <group col="4" colspan="2" string="News / Updates">
+                    <group string="News / Updates">
                         <field name="subject" placeholder="Subject"/>
                         <field name="date" placeholder="Date" required="1"/>
                     </group>
                     <group>
-                        <field name="description" colspan="4" placeholder="Description"/>
+                        <field name="description" placeholder="Description"/>
                     </group>
                         <notebook colspan="4">
                             <page string="Users">

@@ -386,6 +386,23 @@ class StudentStudent(models.Model):
     #             record.photo_base64 = base64.b64encode(record.photo).decode('utf-8')
     #         else:
     #             record.photo_base64 = False
+    
+    preview_card = fields.Html(string="Preview Card", translate=True)
+
+    def action_preview_card(self):
+        for rec in self:
+            # Generate the HTML content for the preview card
+            rec.preview_card = """
+                <div>
+                    <h3>Student Identity Card Preview</h3>
+                    <p><strong>Name:</strong> {}</p>
+                    <p><strong>Class:</strong> {}</p>
+                    <p><strong>Roll Number:</strong> {}</p>
+                </div>
+            """.format(rec.name, rec.class_id.name, rec.roll_number)
+    
+    # def action_preview_card(self):
+    #     return self.env.ref('school.report_student_student_html').report_action(self)
 
     @api.depends('photo')
     def _compute_photo_base64(self):
