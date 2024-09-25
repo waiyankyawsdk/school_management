@@ -442,7 +442,7 @@ class StudentStudent(models.Model):
         student to their respective teacher"""
         teacher = self.env["school.teacher"]
         if vals.get("parent_id"):
-            for parent in vals.get("parent_id")[0][2]:
+            for parent in vals.get("parent_id")[0]:
                 for data in teacher.search([("stu_parent_id", "=", parent)]):
                     data.write({"student_id": [(4, self.id)]})
         if vals.get("email"):
