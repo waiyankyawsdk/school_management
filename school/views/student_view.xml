@@ -7,36 +7,36 @@
         <field name="model">student.student</field>
         <field name="arch" type="xml">
             <form string="Student Information" create="false" delete="false">
-<!--                <header>-->
-<!--                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />-->
-<!--                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />-->
-<!--                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />-->
-<!--                    &lt;!&ndash; Report Button &ndash;&gt;-->
-<!--                    <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>-->
-<!--                    <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>-->
-<!--                    &lt;!&ndash;                    <button name="action_student_student_form_2" type="action" string="Reset To Register"/>&ndash;&gt;-->
-<!--                    <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>-->
-<!--                </header>-->
                 <header>
-                    <div class="oe_button_box">
-                        <!-- Left Position: Alumni and Terminate Buttons -->
-                        <div class="oe_left">
-                            <button
-                                    class="oe_stat_button"
-                                    name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
-                            <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state != 'done'" groups="school.group_school_administration" />
-                        </div>
-
-                        <!-- Right Position: Print Preview and Print ID Buttons -->
-                        <div class="oe_right">
-                            <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
-                            <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>
-                        </div>
-                    </div>
-
-                    <!-- Status Bar -->
+                    <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state !='done'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />
+                    <button class="oe_stat_button" icon="fa-check" name="admission_done" type="object" string="Done" invisible="state!='draft'" groups="school.group_school_administration" />
+                    <!-- Report Button -->
+                    <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>
+                    <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>
+                    <!--                    <button name="action_student_student_form_2" type="action" string="Reset To Register"/>-->
                     <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>
                 </header>
+<!--                <header>-->
+<!--                    <div class="oe_button_box">-->
+<!--                        &lt;!&ndash; Left Position: Alumni and Terminate Buttons &ndash;&gt;-->
+<!--                        <div class="oe_left">-->
+<!--                            <button-->
+<!--                                    class="oe_stat_button"-->
+<!--                                    name="set_alumni" string="Alumni" type="object" icon="fa-archive" invisible="state!='done'" groups="school.group_school_administration" />-->
+<!--                            <button class="oe_highlight oe_stat_button" name="%(school.action_terminate_wizard)d" string="Terminate" type="action" icon="fa-ban" invisible="state != 'done'" groups="school.group_school_administration" />-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash; Right Position: Print Preview and Print ID Buttons &ndash;&gt;-->
+<!--                        <div class="oe_right">-->
+<!--                            <button name="%(report_student_student)d" type="action" string="Print Student Identify Card" class="btn-primary"/>-->
+<!--                            <button name="%(report_student_student_html)d" type="action" string="Print Preview"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Status Bar &ndash;&gt;-->
+<!--                    <field name="state" widget="statusbar" statusbar_visible="alumni,terminate" invisible="state=='done'"/>-->
+<!--                </header>-->
                 <sheet>
                     <div class="oe_button_box" name="buttons"></div>
                     <div class="oe_inline">
@@ -69,7 +69,7 @@
                             <field name="school_id" placeholder="School" widget="selection" help="School of Student" readonly="state in ['alumni','terminate'] or teachr_user_grp"/>
                         </group>
                         <group string="Standard Information">
-                            <field name="standard_id" placeholder="Standard" readonly="state in ['alumni','terminate']" domain="[('school_id','=',school_id)]" widget="selection" />
+                            <field name="standard_id" placeholder="Standard" readonly="state in ['alumni','terminate']" domain="[('school_id','=',school_id)]" />
                             <field name="division_id" placeholder="Division" invisible="1" widget="selection" readonly="state in ['alumni','terminate']"/>
 <!--                            <field name="medium_id" placeholder="Medium"  readonly="state in ['alumni','terminate']" widget="selection"/>-->
                         </group>
@@ -486,7 +486,7 @@
                         </group>
                         <group string="Class Information">
 <!--                            <field name="medium_id" placeholder="Medium" widget="selection" readonly="state == 'alumni'"/>-->
-                            <field name="standard_id" placeholder="Class" domain="[('school_id','=',school_id)]" widget="selection" readonly="state == 'alumni'"/>
+                            <field name="standard_id" placeholder="Class" domain="[('school_id','=',school_id)]" readonly="state == 'alumni'"/>
                             <field name="division_id" placeholder="Division" widget="selection" readonly="state == 'alumni'" invisible="1"/>
 
                         </group>

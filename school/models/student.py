@@ -117,19 +117,11 @@ class StudentStudent(models.Model):
     student_name = fields.Char(
         "Student Name",
         # related="user_id.name",
-        # realated="last",
         compute="_compute_full_name",
         store=True,
         readonly=True,
         help="Student Name",
     )
-    # student_name = fields.Char(
-    #     "Full Name",
-    #     compute="_compute_full_name",
-    #     store=True,
-    #     readonly=True,
-    #     help="Full Name combining first and last names",
-    # )
     pid = fields.Char(
         "Student ID",
         required=True,
@@ -179,7 +171,6 @@ class StudentStudent(models.Model):
     last = fields.Char(
         "Surname",
         required=True,
-        # related='user_id.last',
         store=True,
         states={"done": [("readonly", True)]},
         help="Enter student last name",
@@ -349,6 +340,11 @@ class StudentStudent(models.Model):
         help="Select student standard",
         tracking=True,
     )
+    standard_combine = fields.Char(
+        related="standard_id.standard_combine",
+        store=True
+    )
+
     parent_id = fields.Many2many(
         "school.parent",
         "students_parents_rel",

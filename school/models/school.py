@@ -307,13 +307,19 @@ class SchoolStandard(models.Model):
         help="School of the following standard",
     )
     standard_id = fields.Many2one(
-        "standard.standard", "Standard", required=True, help="Standard"
+        "standard.standard", "Standard", required=True, help="Standard",
+        store=True,
     )
     division_id = fields.Many2one(
         "standard.division",
         "Division",
         required=True,
+        store=True,
         help="Standard division",
+    )
+    standard_combine = fields.Char(
+        string="Standard Combine",
+        compute="_compute_standard_combine",
     )
     medium_id = fields.Many2one(
         "standard.medium",
@@ -330,6 +336,14 @@ class SchoolStandard(models.Model):
     )
     user_id = fields.Many2one(
         "school.teacher", "Class Teacher", help="Teacher of the standard"
+    )
+    user_ids = fields.Many2many(
+        "school.teacher",
+        "user_class_rel",
+        "id",
+        "user_ids",
+        "School Teacher",
+        help="Name to whom this clas is related.",
     )
     student_ids = fields.One2many(
         "student.student",
@@ -376,12 +390,38 @@ class SchoolStandard(models.Model):
         "class.room", "Room Number", help="Class room of the standard"
     )
 
-    @api.onchange("standard_id", "division_id")
-    def onchange_combine(self):
-        """Onchange to assign name respective of it's standard and division"""
-        self.name = (
-            str(self.standard_id.name) + "-" + str(self.division_id.name)
-        )
+    @api.depends('standard_id', 'division_id')
+    def _compute_display_name(self):
+        result = []
+        for record in self:
+            standard_name = record.standard_id.name if record.standard_id else ''
+            division_name = record.division_id.name if record.division_id else ''
+            record.display_name = f"{standard_name} [{division_name}]".strip()
+
+    @api.depends('standard_id', 'division_id')
+    def _compute_standard_full_name(self):
+        for record in self:
+            standard_name = record.standard_id.name if record.standard_id else ''
+            division_name = record.division_id.name if record.division_id else ''
+            record.standard_id = f"{first_name} [{last_name}]".strip()
+
+    # @api.onchange("standard_id", "division_id")
+    # def onchange_combine(self):
+    #     """Onchange to assign name respective of it's standard and division"""
+    #     self.name = (
+    #         str(self.standard_id.name) + "-" + str(self.division_id.name)
+    #     )
+
+    @api.depends("standard_id", "division_id")
+    def _compute_standard_combine(self):
+        """Onchange to assign name respective of its standard and division"""
+        for record in self:
+            if record.standard_id and record.division_id:
+                standard_name = record.standard_id.name if record.standard_id else ''
+                division_name = record.division_id.name if record.division_id else ''
+                record.standard_combine = f"{standard_name}[{division_name}]".strip()
+            else:
+                record.standard_combine = False  # In case either field is missing
 
     @api.constrains("standard_id", "division_id")
     def check_standard_unique(self):

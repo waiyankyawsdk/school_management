@@ -306,7 +306,7 @@
                     <notebook colspan="4">
                         <page string="Student Payslip">
                             <field name="line_ids" colspan="4" nolabel="1" readonly="state != 'draft'">
-                                <tree string="Student Payslip" create="false">
+                                <tree string="Student Payslip" >
                                     <field name="name"/>
                                     <field name="number"/>
                                     <field name="student_id"/>
