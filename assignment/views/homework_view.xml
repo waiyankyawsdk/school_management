@@ -65,12 +65,16 @@
                     <field name="assignment_name" placeholder="Assignment Name" readonly="state != 'draft'"/>
                     <field name="teacher_id" placeholder="Teacher Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True, &quot;no_search&quot;: True}"/>
                 </group>
-                <group col="4" string="Subject and Dates">
-                    <field name="standard_id" select="1" placeholder="Class" readonly="state != 'draft'" widget="selection" required="1"/>
-                    <field name="assign_date" placeholder="Assign Date" readonly="state != 'draft'"/>
-                    <field name="subject_id" select="1" placeholder="Subject" readonly="state != 'draft'" domain="[('teacher_ids','in',teacher_id),('standard_ids','in',subject_standard_assignment)]" widget="selection"/>
-                    <field name="due_date" placeholder="Due Date" readonly="state != 'draft'"/>
-                    <field name="subject_standard_assignment" invisible="1"/>
+                <group string="Subject and Dates">
+                    <group>
+                        <field name="standard_id" select="1" placeholder="Class" readonly="state != 'draft'" widget="selection" required="1"/>
+                        <field name="assign_date" placeholder="Assign Date" readonly="state != 'draft'"/>
+                        <field name="subject_id" select="1" placeholder="Subject" readonly="state != 'draft'" domain="[('teacher_ids','in',teacher_id),('standard_ids','in',subject_standard_assignment)]" widget="selection"/>
+                    </group>
+                    <group>
+                        <field name="due_date" placeholder="Due Date" readonly="state != 'draft'"/>
+                        <field name="subject_standard_assignment" invisible="1"/>
+                    </group>
                 </group>
                 <group string="Submission Format Information" col="4">
                     <field name="type_submission" readonly="state != 'draft'"/>
@@ -138,7 +142,7 @@
                         <field name="standard_id" placeholder="Class" readonly="state != 'draft'" widget="selection"/>
                         <field name="subject_id" placeholder="Subject" readonly="state != 'draft'" widget="selection" domain="[('teacher_ids','in',teacher_id),('standard_ids','in',student_standard)]"/>
                     </group>
-                    <group col="4" string="Dates">
+                    <group string="Dates">
                         <field name="assign_date" placeholder="Assign Date" readonly="state != 'draft'"/>
                         <field name="due_date" placeholder="Due Date" readonly="state != 'draft'"/>
                     </group>

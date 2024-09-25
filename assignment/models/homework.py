@@ -63,10 +63,10 @@ class SchoolTeacherAssignment(models.Model):
         help="""Standard of the assignment in which it assigned""",
     )
 
-    @api.depends('assignment_name')
-    def _compute_name(self):
-        for rec in self:
-            rec.name = rec.assignment_name  # Assign assignment_name to the name field
+    # @api.depends('assignment_name')
+    # def _compute_name(self):
+    #     for rec in self:
+    #         rec.name = rec.assignment_name  # Assign assignment_name to the name field
 
     @api.onchange("standard_id")
     def onchange_subject_standard(self):
@@ -135,14 +135,14 @@ class SchoolTeacherAssignment(models.Model):
         """Changes the state to done"""
         self.state = "done"
 
-    def unlink(self):
-        """Inherited unlink method to give warning on record deletion"""
-        for rec in self:
-            if rec.state != "draft":
-                raise ValidationError(
-                    _("Confirmed assignment can not be deleted!")
-                )
-        return super(SchoolTeacherAssignment, self).unlink()
+    # def unlink(self):
+    #     """Inherited unlink method to give warning on record deletion"""
+    #     for rec in self:
+    #         if rec.state != "draft":
+    #             raise ValidationError(
+    #                 _("Confirmed assignment can not be deleted!")
+    #             )
+    #     return super(SchoolTeacherAssignment, self).unlink()
 
 
 class SchoolStudentAssignment(models.Model):
@@ -282,14 +282,14 @@ class SchoolStudentAssignment(models.Model):
         self.ensure_one()
         self.state = "active"
 
-    def unlink(self):
-        """Inherited unlink method to give warning on record deletion"""
-        for rec in self:
-            if rec.state != "draft":
-                raise ValidationError(
-                    _("Confirmed assignment can not be deleted!")
-                )
-        return super(SchoolStudentAssignment, self).unlink()
+    # def unlink(self):
+    #     """Inherited unlink method to give warning on record deletion"""
+    #     for rec in self:
+    #         if rec.state != "draft":
+    #             raise ValidationError(
+    #                 _("Confirmed assignment can not be deleted!")
+    #             )
+    #     return super(SchoolStudentAssignment, self).unlink()
 
 
 class FileFormat(models.Model):
