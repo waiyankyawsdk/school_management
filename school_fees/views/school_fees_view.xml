@@ -52,7 +52,7 @@
         </field>
     </record>
     <!-- Tree View Of Student Fees Structure Information -->
-    <record id="view_student_fees_structre_tree" model="ir.ui.view">
+    <record id="view_student_fees_structure_tree" model="ir.ui.view">
         <field name="name">student.fees.structure.tree</field>
         <field name="model">student.fees.structure</field>
         <field name="arch" type="xml">
@@ -77,7 +77,7 @@
                         <field name="type"/>
                         <field name="amount" />
                         <field name="account_id" options="{&quot;no_create&quot;: True}"/>
-                        <field name="company_id"/>
+<!--                        <field name="company_id"/>-->
                         <field name="currency_id" invisible="0"/>
                         <field name="currency_symbol" invisible="0"/>
                     </group>
@@ -225,7 +225,7 @@
                                     <field name="currency_symbol" invisible="0"/>
                                     <field name="move_id" readonly="state != 'draft'"/>
                                     <field name="payment_date" placeholder="Payment Date" readonly="state != 'draft'"/>
-                                    <field name="company_id" string = "School" placeholder="School Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>
+<!--                                    <field name="company_id" string = "School" placeholder="School Name" readonly="state != 'draft'" options="{&quot;no_create&quot;: True}"/>-->
                                 </group>
                             </page>
                         </notebook>
@@ -324,7 +324,7 @@
                                             <field name="student_id" placeholder="Student Name"/>
                                             <field name="total"/>
                                             <field name="journal_id" placeholder="Journal"/>
-                                            <field name="company_id" placeholder="School Name"/>
+<!--                                            <field name="company_id" placeholder="School Name"/>-->
                                         </group>
                                     </sheet>
                                 </form>
@@ -380,11 +380,11 @@
         <field name="view_mode">tree,form</field>
     </record>
     <!-- Action Of Form & Tree Views Of Student PaySlip Line Information -->
-    <record id="action_student_payslip_line_form" model="ir.actions.act_window">
-        <field name="name">Fees Head</field>
-        <field name="res_model">student.fees.structure.line</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record id="action_student_payslip_line_form" model="ir.actions.act_window">-->
+<!--        <field name="name">Fees Head</field>-->
+<!--        <field name="res_model">student.fees.structure.line</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
     <!-- Action Of Form & Tree Views Of Student PaySlip Information -->
 
     <record id="action_student_payslip_form" model="ir.actions.act_window">
@@ -434,6 +434,6 @@
     <menuitem id="menu_student_fees_structure_form" name="Fees" parent="school.menu_configuration"/>
     <menuitem id="menu_student_fees_structure_sub_form" name="Fees Structure" parent="menu_student_fees_structure_form"
               action="action_student_fees_structure_form"/>
-    <menuitem id="menu_student_payslip_line_form" name="Fees Head" parent="menu_student_fees_structure_form"
-              action="action_student_payslip_line_form" sequence="2"/>
+<!--    <menuitem id="menu_student_payslip_line_form" name="Fees Head" parent="menu_student_fees_structure_form"-->
+<!--              action="action_student_payslip_line_form" sequence="2"/>-->
 </odoo>

@@ -79,7 +79,7 @@
                             <label for="street" string="Address" />
                             <div class="o_address_format">
                                 <field name="street" class="o_address_street" placeholder="Street..." readonly="state in ['alumni','terminate']"/>
-                                <field name="street2" class="o_address_street" placeholder="Street2..." readonly="state in ['alumni','terminate']"/>
+<!--                                <field name="street2" class="o_address_street" placeholder="Street2..." readonly="state in ['alumni','terminate']"/>-->
                                 <field name="city" placeholder="City" class="o_address_city" required="1" readonly="state in ['alumni','terminate']"/>
                                 <field name="state_id" domain="[('country_id','=',country_id)]" class="o_address_state" required="1" placeholder="State" options="{&quot;no_open&quot;: True}" readonly="state in ['alumni','terminate']"/>
                                 <field name="zip" placeholder="ZIP" class="o_address_zip" readonly="state in ['alumni','terminate']"/>
@@ -88,7 +88,7 @@
                         </group>
                         <group>
                             <field name="phone" placeholder="Phone Number" readonly="state in ['alumni','terminate']"/>
-                            <field name="mobile" placeholder="Mobile Number" readonly="state in ['alumni','terminate']"/>
+<!--                            <field name="mobile" placeholder="Mobile Number" readonly="state in ['alumni','terminate']"/>-->
                             <field name="email" placeholder="Email Address" String="Email" readonly="state in ['alumni','terminate']"/>
 <!--                            <field name="website" widget="url" placeholder="e.g. www.serpentcs.com" readonly="state in ['alumni','terminate']"/>-->
                             <field name="teachr_user_grp" invisible="1"/>
@@ -114,7 +114,7 @@
                                 <newline />
                                 <group colspan="4" col="4">
                                     <field name="contact_phone" readonly="state in ['alumni','terminate']" placeholder="Phone Number"/>
-                                    <field name="contact_mobile" readonly="state in ['alumni','terminate']" placeholder="Mobile Number"/>
+<!--                                    <field name="contact_mobile" readonly="state in ['alumni','terminate']" placeholder="Mobile Number"/>-->
                                 </group>
                                 <newline />
                             </group>
