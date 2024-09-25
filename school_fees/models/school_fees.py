@@ -733,10 +733,10 @@ class AccountPaymentRegister(models.TransientModel):
         invoice = False
         curr_date = fields.Date.today()
         for rec in self:
-            if self._context.get("active_model") == "account.move":
-                invoice = self.env["account.move"].browse(
-                    self._context.get("active_ids", [])
-                )
+            # if self._context.get("active_model") == "account.move":
+            invoice = self.env["account.move"].browse(
+                self._context.get("active_id")
+            )
             vals = {}
             #        'invoice_ids' deprecated field instead of this
             #                             used delegation with account_move
