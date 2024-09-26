@@ -367,7 +367,7 @@ class StudentStudent(models.Model):
     )
     upload_file = fields.Binary(
         "Attachment File (.pdf)",
-        required=True,
+        # required=True,
         help="Student certificate",
         attachment=True
     )

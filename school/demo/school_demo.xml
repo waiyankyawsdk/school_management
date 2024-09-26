@@ -468,6 +468,11 @@
             <field name="code">3rd Sem</field>
             <field name="sequence">3</field>
         </record>
+        <record id="demo_standard_division_4" model="standard.division">
+            <field name="name">-</field>
+            <field name="code"></field>
+            <field name="sequence">4</field>
+        </record>
         <!-- Subject Information -->
         <record id="demo_subject_subject_1" model="subject.subject">
             <field name="name">English</field>
@@ -585,7 +590,7 @@
 <!-- School Standard -->
         <record id="demo_school_standard_1" model="school.standard">
             <field name="standard_id" ref="demo_standard_standard_1"/>
-            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="division_id" ref="demo_standard_division_4"/>
 <!--            <field name="medium_id" ref="demo_standard_medium_1"/>-->
             <field name="school_id" ref="demo_school_1"/>
             <!-- <field name="user_id" ref="demo_school_teacher_1"/> -->
@@ -596,7 +601,7 @@
         </record>
         <record id="demo_school_standard_2" model="school.standard">
             <field name="standard_id" ref="demo_standard_standard_2"/>
-            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="division_id" ref="demo_standard_division_4"/>
 <!--            <field name="medium_id" ref="demo_standard_medium_2"/>-->
             <field name="school_id" ref="demo_school_1"/>
             <!-- <field name="user_id" ref="demo_school_teacher_2"/> -->
@@ -687,7 +692,7 @@
             <field name="work_email">peter@demo.com</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="standard_id" ref="demo_school_standard_2"/>
-            <field eval="[(6,0,[ref('demo_subject_subject_5'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_6'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8'),ref('demo_subject_subject_9')])]" name="subject_id"/>
         </record>
 
         <record id="demo_school_teacher_3" model="school.teacher">
@@ -695,7 +700,7 @@
             <field name="work_email">winparker@demo.com</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="standard_id" ref="demo_school_standard_1"/>
-            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_10'),ref('demo_subject_subject_11'),ref('demo_subject_subject_12')])]" name="subject_id"/>
         </record>
 
         <record id="demo_school_teacher_4" model="school.teacher">
@@ -703,7 +708,7 @@
             <field name="work_email">aye@demo.com</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="standard_id" ref="demo_school_standard_1"/>
-            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_13'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
         </record>
 
         <record id="demo_school_teacher_5" model="school.teacher">
@@ -949,6 +954,141 @@
             <field name="standard_id" ref="demo_school_standard_3"/>
             <field name="division_id" ref="demo_standard_division_2"/>
             <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_9" model="student.student">
+            <field name="name">Thiha </field>
+            <field name="last">Thura</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_10" model="student.student">
+            <field name="name">Khine </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Zeya</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_11" model="student.student">
+            <field name="name">Naw </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Lam</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_12" model="student.student">
+            <field name="name">Nan </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Noe Win</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_13" model="student.student">
+            <field name="name">Min Khine</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Soe San Dar</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_14" model="student.student">
+            <field name="name">Lin</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Zaw Myint</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_15" model="student.student">
+            <field name="name">May</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Than Khine</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_16" model="student.student">
+            <field name="name">May </field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Oo Myint</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
         </record>
 
         <!-- Student Parent Information -->
