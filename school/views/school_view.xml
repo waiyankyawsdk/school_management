@@ -9,12 +9,12 @@
             <form string="Student Reminder">
                 <sheet>
                     <separator string="Reminder" />
-                    <group col="4" colspan="4">
+                    <group>
                         <field name="stu_id" widget="selection" placeholder="Student" domain="[('state','=','done')]"/>
                         <field name="date" placeholder="Select Date" />
                         <field name="name" placeholder="Reminder Title" required="1"/>
                         <newline />
-                        <field name="description" colspan="4" placeholder="Description"/>
+                        <field name="description" placeholder="Description"/>
                     </group>
                 </sheet>
             </form>
