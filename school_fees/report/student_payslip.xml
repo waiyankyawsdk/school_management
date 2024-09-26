@@ -24,7 +24,7 @@
                         </div>
                         <br />
                         <br />
-                        <table width="100%">
+                        <table width="100%" class="table table-borderless">
                             <tr>
                                 <td width="15%" style="font-family: 'Helvetica';font-size: 18px;">
                                     <b>Number</b>

@@ -8,7 +8,7 @@
                     <div class="page" style="height: 2px;">
                         <div class="oe_structure"/>
                         <t t-foreach="o" t-as="student">
-                        <table width="40%" height="280px" style="border: 3px solid black;" align="center">
+                        <table width="40%" height="280px" style="border: 3px solid black;" align="center" class="table table-borderless">
                             <tr style="margin-top:5px">
                                 <td colspan="2" align="center">
                                     <h1><strong>

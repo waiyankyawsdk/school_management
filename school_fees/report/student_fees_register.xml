@@ -24,7 +24,7 @@
                         </div>
                         <br />
                         <br />
-                        <table width="100%">
+                        <table width="100%" class="table table-borderless">
                             <tr>
                                 <td width="15%" style="font-family: 'Helvetica';font-size: 18px;">
                                     <b>Number</b>
@@ -83,7 +83,7 @@
                                 </t>
                             </tbody>
                         </table>
-                        <table width="100%">
+                        <table width="100%" class="table table-borderless">
                             <tr>
                                 <td width="5%"></td>
                                 <td width="50%" align="left" style="font-family: 'Helvetica';font-size: 16px;">
@@ -94,7 +94,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table width="100%">
+                        <table width="100%" class="table table-borderless">
                             <tr>
                                 <td width="50%" style="font-family: 'Helvetica';font-size: 16px;">
                                     <br />
