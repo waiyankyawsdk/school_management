@@ -4,21 +4,21 @@
     <data noupdate="1">
         <!--  School Information -->
         <record id="demo_school_1" model="school.school">
-            <field name="name">West High School</field>
+            <field name="name">Auston YGN Campus</field>
             <field name="code">0672</field>
-            <field name="city">MELBOURNE</field>
+            <field name="city">Yangon</field>
             <field name="state_id" ref="base.state_au_7"/>
         </record>
         <record id="demo_school_2" model="school.school">
-            <field name="name">East High School</field>
+            <field name="name">Auston MDY Campus</field>
             <field name="code">0786</field>
-            <field name="city">ONTARIO</field>
+            <field name="city">Yangon</field>
         </record>
-        <record id="demo_school_3" model="school.school">
-            <field name="name">EverWood High School</field>
-            <field name="code">0895</field>
-            <field name="city">LONDON</field>
-        </record>
+<!--        <record id="demo_school_3" model="school.school">-->
+<!--            <field name="name">Auston YGN Campus(TC)</field>-->
+<!--            <field name="code">0895</field>-->
+<!--            <field name="city">Yangon</field>-->
+<!--        </record>-->
 
         <!-- Student Grade Master -->
         <record id="demo_student_grade_1" model="grade.master">
@@ -417,19 +417,24 @@
        </record>
         <!--Standard Information-->
         <record id="demo_standard_standard_1" model="standard.standard">
-            <field name="name">10th</field>
-            <field name="code">FRT</field>
+            <field name="name">Pre Foundation</field>
+            <field name="code">PF</field>
             <field name="sequence">1</field>
         </record>
         <record id="demo_standard_standard_2" model="standard.standard">
-            <field name="name">11th</field>
-            <field name="code">SCN</field>
+            <field name="name">Foundation</field>
+            <field name="code">FD</field>
             <field name="sequence">2</field>
         </record>
         <record id="demo_standard_standard_3" model="standard.standard">
-            <field name="name">12th</field>
-            <field name="code">THR</field>
+            <field name="name">Higher Diploma</field>
+            <field name="code">HD</field>
             <field name="sequence">3</field>
+        </record>
+        <record id="demo_standard_standard_4" model="standard.standard">
+            <field name="name">Bachelor</field>
+            <field name="code">BH</field>
+            <field name="sequence">4</field>
         </record>
         <!--Standard Medium Information-->
         <record id="demo_standard_medium_1" model="standard.medium">
@@ -449,76 +454,133 @@
         </record>
         <!--Standard Division Information-->
         <record id="demo_standard_division_1" model="standard.division">
-            <field name="name">A</field>
-            <field name="code">A</field>
+            <field name="name">First Sem</field>
+            <field name="code">1st Sem</field>
             <field name="sequence">1</field>
         </record>
         <record id="demo_standard_division_2" model="standard.division">
-            <field name="name">B</field>
-            <field name="code">B</field>
+            <field name="name">Second Sem</field>
+            <field name="code">2nd Sem</field>
             <field name="sequence">2</field>
         </record>
-
+        <record id="demo_standard_division_3" model="standard.division">
+            <field name="name">Third Sem</field>
+            <field name="code">3rd Sem</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="demo_standard_division_4" model="standard.division">
+            <field name="name">-</field>
+            <field name="code"></field>
+            <field name="sequence">4</field>
+        </record>
         <!-- Subject Information -->
         <record id="demo_subject_subject_1" model="subject.subject">
-            <field name="name">Mathematics</field>
-            <field name="code">MAT</field>
+            <field name="name">English</field>
+            <field name="code">Eng</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6,0,[ref('demo_school_teacher_1'),ref('demo_school_teacher_3')])]"/> -->
         </record>
         <record id="demo_subject_subject_2" model="subject.subject">
-            <field name="name">Science</field>
-            <field name="code">SCN</field>
+            <field name="name">Physics</field>
+            <field name="code">PHY</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [ref('demo_school_teacher_1'),ref('demo_school_teacher_3')])]"/> -->
         </record>
         <record id="demo_subject_subject_3" model="subject.subject">
-            <field name="name">English</field>
-            <field name="code">ENG</field>
+            <field name="name">Math</field>
+            <field name="code">MTH</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [ref('demo_school_teacher_1'),ref('demo_school_teacher_2')])]"/> -->
         </record>
         <record id="demo_subject_subject_4" model="subject.subject">
-            <field name="name">Social Science</field>
-            <field name="code">SOS</field>
+            <field name="name">Computer Science</field>
+            <field name="code">CS</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [ref('demo_school_teacher_1'),ref('demo_school_teacher_2')])]"/> -->
         </record>
         <record id="demo_subject_subject_5" model="subject.subject">
-            <field name="name">Computer</field>
-            <field name="code">CMP</field>
+            <field name="name">Programming</field>
+            <field name="code">PGM</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [ref('demo_school_teacher_1'),ref('demo_school_teacher_2')])]"/> -->
         </record>
         <record id="demo_subject_subject_6" model="subject.subject">
-            <field name="name">Sport</field>
-            <field name="code">PET</field>
+            <field name="name">Advanced Maths</field>
+            <field name="code">AMS</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [ref('demo_school_teacher_2'),ref('demo_school_teacher_3')])]"/> -->
         </record>
         <record id="demo_subject_subject_7" model="subject.subject">
-            <field name="name">Music</field>
-            <field name="code">MS</field>
+            <field name="name">Cyber Security</field>
+            <field name="code">CYS</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
             <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
         </record>
         <record id="demo_subject_subject_8" model="subject.subject">
-            <field name="name">Philosophy</field>
-            <field name="code">PH</field>
+            <field name="name">Information System</field>
+            <field name="code">IS</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_9" model="subject.subject">
+            <field name="name">Web Development</field>
+            <field name="code">WEB</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_10" model="subject.subject">
+            <field name="name">Virtualization</field>
+            <field name="code">VZ</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_11" model="subject.subject">
+            <field name="name">Mobile DEV</field>
+            <field name="code">MDEV</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_12" model="subject.subject">
+            <field name="name">Forensics</field>
+            <field name="code">FS</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_13" model="subject.subject">
+            <field name="name">Database System</field>
+            <field name="code">DS</field>
+            <field name="maximum_marks">100</field>
+            <field name="minimum_marks">35</field>
+            <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
+            <!-- <field name="teacher_ids" eval="[(6, 0, [])]"/> -->
+        </record>
+        <record id="demo_subject_subject_13" model="subject.subject">
+            <field name="name">UI/UX</field>
+            <field name="code">UIX</field>
             <field name="maximum_marks">100</field>
             <field name="minimum_marks">35</field>
             <field name="standard_ids" eval="[(6,0,[ref('demo_standard_standard_1'),ref('demo_standard_standard_2'),ref('demo_standard_standard_3')])]"/>
@@ -528,34 +590,89 @@
 <!-- School Standard -->
         <record id="demo_school_standard_1" model="school.standard">
             <field name="standard_id" ref="demo_standard_standard_1"/>
-            <field name="division_id" ref="demo_standard_division_1"/>
-            <field name="medium_id" ref="demo_standard_medium_1"/>
+            <field name="division_id" ref="demo_standard_division_4"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_1"/>-->
             <field name="school_id" ref="demo_school_1"/>
             <!-- <field name="user_id" ref="demo_school_teacher_1"/> -->
-            <field name="name">10th-A</field>
+<!--            <field name="name">10th-A</field>-->
             <field name="class_room_id" ref="class_room1"/>
             <field name="capacity">30</field>
             <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_5'),ref('demo_subject_subject_6')])]"/>
         </record>
         <record id="demo_school_standard_2" model="school.standard">
             <field name="standard_id" ref="demo_standard_standard_2"/>
-            <field name="division_id" ref="demo_standard_division_2"/>
-            <field name="medium_id" ref="demo_standard_medium_2"/>
+            <field name="division_id" ref="demo_standard_division_4"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_2"/>-->
             <field name="school_id" ref="demo_school_1"/>
             <!-- <field name="user_id" ref="demo_school_teacher_2"/> -->
             <field name="class_room_id" ref="class_room2"/>
-            <field name="name">11th-B</field>
+<!--            <field name="name">11th-B</field>-->
             <field name="capacity">30</field>
             <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_6'),ref('demo_subject_subject_7')])]"/>
         </record>
         <record id="demo_school_standard_3" model="school.standard">
             <field name="standard_id" ref="demo_standard_standard_3"/>
             <field name="division_id" ref="demo_standard_division_1"/>
-            <field name="medium_id" ref="demo_standard_medium_3"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
             <field name="school_id" ref="demo_school_1"/>
             <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
             <field name="class_room_id" ref="class_room3"/>
-            <field name="name">12th-A</field>
+<!--            <field name="name">12th-A</field>-->
+            <field name="capacity">30</field>
+            <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
+        </record>
+        <record id="demo_school_standard_4" model="school.standard">
+            <field name="standard_id" ref="demo_standard_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
+            <field name="school_id" ref="demo_school_1"/>
+            <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
+            <field name="class_room_id" ref="class_room4"/>
+<!--            <field name="name">12th-A</field>-->
+            <field name="capacity">30</field>
+            <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
+        </record>
+        <record id="demo_school_standard_5" model="school.standard">
+            <field name="standard_id" ref="demo_standard_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_3"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
+            <field name="school_id" ref="demo_school_1"/>
+            <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
+            <field name="class_room_id" ref="class_room5"/>
+<!--            <field name="name">12th-A</field>-->
+            <field name="capacity">30</field>
+            <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
+        </record>
+        <record id="demo_school_standard_6" model="school.standard">
+            <field name="standard_id" ref="demo_standard_standard_4"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
+            <field name="school_id" ref="demo_school_1"/>
+            <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
+            <field name="class_room_id" ref="class_room6"/>
+<!--            <field name="name">12th-A</field>-->
+            <field name="capacity">30</field>
+            <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
+        </record>
+        <record id="demo_school_standard_7" model="school.standard">
+            <field name="standard_id" ref="demo_standard_standard_4"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
+            <field name="school_id" ref="demo_school_1"/>
+            <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
+            <field name="class_room_id" ref="class_room7"/>
+<!--            <field name="name">12th-A</field>-->
+            <field name="capacity">30</field>
+            <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
+        </record>
+        <record id="demo_school_standard_8" model="school.standard">
+            <field name="standard_id" ref="demo_standard_standard_4"/>
+            <field name="division_id" ref="demo_standard_division_3"/>
+<!--            <field name="medium_id" ref="demo_standard_medium_3"/>-->
+            <field name="school_id" ref="demo_school_1"/>
+            <!-- <field name="user_id" ref="demo_school_teacher_3"/> -->
+            <field name="class_room_id" ref="class_room8"/>
+<!--            <field name="name">12th-A</field>-->
             <field name="capacity">30</field>
             <field name="subject_ids" eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8')])]"/>
         </record>
@@ -575,7 +692,7 @@
             <field name="work_email">peter@demo.com</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="standard_id" ref="demo_school_standard_2"/>
-            <field eval="[(6,0,[ref('demo_subject_subject_5'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_6'),ref('demo_subject_subject_7'),ref('demo_subject_subject_8'),ref('demo_subject_subject_9')])]" name="subject_id"/>
         </record>
 
         <record id="demo_school_teacher_3" model="school.teacher">
@@ -583,44 +700,132 @@
             <field name="work_email">winparker@demo.com</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_10'),ref('demo_subject_subject_11'),ref('demo_subject_subject_12')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_4" model="school.teacher">
+            <field name="name">Aye</field>
+            <field name="work_email">aye@demo.com</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_13'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_5" model="school.teacher">
+            <field name="name">Thet</field>
+            <field name="work_email">thet@demo.com</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_6" model="school.teacher">
+            <field name="name">Zaw</field>
+            <field name="work_email">zaw@demo.com</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_7" model="school.teacher">
+            <field name="name">Myo</field>
+            <field name="work_email">myo@demo.com</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_8" model="school.teacher">
+            <field name="name">Nyein</field>
+            <field name="work_email">nyein@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_5')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_9" model="school.teacher">
+            <field name="name">Aung</field>
+            <field name="work_email">aung@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_2"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_5'),ref('demo_subject_subject_3'),ref('demo_subject_subject_4'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_10" model="school.teacher">
+            <field name="name">Kaung</field>
+            <field name="work_email">kaung@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_11" model="school.teacher">
+            <field name="name">Khant</field>
+            <field name="work_email">khant@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_12" model="school.teacher">
+            <field name="name">Wai</field>
+            <field name="work_email">wai@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_13" model="school.teacher">
+            <field name="name">Hsu</field>
+            <field name="work_email">hsu@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
+        </record>
+
+        <record id="demo_school_teacher_14" model="school.teacher">
+            <field name="name">Pyae</field>
+            <field name="work_email">pyae@demo.com</field>
+            <field name="school_id" ref="demo_school_2"/>
+            <field name="standard_id" ref="demo_school_standard_1"/>
             <field eval="[(6,0,[ref('demo_subject_subject_1'),ref('demo_subject_subject_2'),ref('demo_subject_subject_6')])]" name="subject_id"/>
         </record>
 
 
-        <!--  Subject elective -->
-        <record id="demo_elective_subject_1" model="subject.elective">
-            <field name="name">Elective Group 1</field>
-            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_8')])]"/>
-        </record>
+<!--        &lt;!&ndash;  Subject elective &ndash;&gt;-->
+<!--        <record id="demo_elective_subject_1" model="subject.elective">-->
+<!--            <field name="name">Elective Group 1</field>-->
+<!--            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_8')])]"/>-->
+<!--        </record>-->
 
-        <record id="demo_elective_subject_2" model="subject.elective">
-            <field name="name">Elective Group 2</field>
-            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_5')])]"/>
-        </record>
+<!--        <record id="demo_elective_subject_2" model="subject.elective">-->
+<!--            <field name="name">Elective Group 2</field>-->
+<!--            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_5')])]"/>-->
+<!--        </record>-->
 
-        <record id="demo_elective_subject_3" model="subject.elective">
-            <field name="name">Elective Group 3</field>
-            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_6')])]"/>
-        </record>
+<!--        <record id="demo_elective_subject_3" model="subject.elective">-->
+<!--            <field name="name">Elective Group 3</field>-->
+<!--            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_6')])]"/>-->
+<!--        </record>-->
 
-        <record id="demo_elective_subject_4" model="subject.elective">
-            <field name="name">Elective Group 4</field>
-            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_7')])]"/>
-        </record>
+<!--        <record id="demo_elective_subject_4" model="subject.elective">-->
+<!--            <field name="name">Elective Group 4</field>-->
+<!--            <field name="subject_ids" eval="[(6, 0, [ref('school.demo_subject_subject_7')])]"/>-->
+<!--        </record>-->
+
         <!-- Student Informations -->
         <record id="demo_student_student_4" model="student.student">
             <field name="name">Maria</field>
-            <field name="middle">Samuel</field>
-            <field name="last">Snell</field>
-            <field name="student_code">0672/2018/001</field>
-            <field name="year" ref="demo_academic_year_3"/>
+            <field name="last">Samuel Snell</field>
+            <field name="student_code">0672/2024/001</field>
+            <field name="year" ref="demo_academic_year_2"/>
             <field name="pid">New</field>
             <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=13)).strftime('%Y-11-02 %H:%M')"/>
             <field name="gender">female</field>
-            <field name="roll_no">12</field>
+            <field name="roll_no">1</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="country_id" ref="base.uk"/>
-            <field name="city">London</field>
+            <field name="city">Yangon</field>
             <field name="standard_id" ref="demo_school_standard_1"/>
             <field name="division_id" ref="demo_standard_division_1"/>
             <field name="medium_id" ref="demo_standard_medium_1"/>
@@ -701,17 +906,17 @@
 
         <record id="demo_student_student_1" model="student.student">
             <field name="name">Mary</field>
-            <field name="middle">Daniel</field>
-            <field name="last">Richardson</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Daniel Richardson</field>
             <field name="state">draft</field>
-            <field name="year" ref="demo_academic_year_1"/>
+            <field name="year" ref="demo_academic_year_2"/>
             <field name="pid">New</field>
             <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
             <field name="gender">female</field>
             <field name="roll_no">1</field>
             <field name="school_id" ref="demo_school_1"/>
             <field name="country_id" ref="base.au"/>
-            <field name="city">Melbourne</field>
+            <field name="city">Yangon</field>
             <field name="standard_id" ref="demo_school_standard_1"/>
             <field name="division_id" ref="demo_standard_division_1"/>
             <field name="medium_id" ref="demo_standard_medium_1"/>
@@ -749,6 +954,141 @@
             <field name="standard_id" ref="demo_school_standard_3"/>
             <field name="division_id" ref="demo_standard_division_2"/>
             <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_9" model="student.student">
+            <field name="name">Thiha </field>
+            <field name="last">Thura</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_10" model="student.student">
+            <field name="name">Khine </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Zeya</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_11" model="student.student">
+            <field name="name">Naw </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Lam</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_12" model="student.student">
+            <field name="name">Nan </field>
+<!--            <field name="middle">Caleb</field>-->
+            <field name="last">Noe Win</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-09-24 %H:%M')"/>
+            <field name="gender">male</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Adelaide</field>
+            <field name="standard_id" ref="demo_school_standard_3"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_3"/>
+        </record>
+        <record id="demo_student_student_13" model="student.student">
+            <field name="name">Min Khine</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Soe San Dar</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_2"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_14" model="student.student">
+            <field name="name">Lin</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Zaw Myint</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_15" model="student.student">
+            <field name="name">May</field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Than Khine</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
+        </record>
+        <record id="demo_student_student_16" model="student.student">
+            <field name="name">May </field>
+<!--            <field name="middle"></field>-->
+            <field name="last">Oo Myint</field>
+            <field name="state">draft</field>
+            <field name="year" ref="demo_academic_year_2"/>
+            <field name="pid">New</field>
+            <field name="date_of_birth" eval="(DateTime.today() - relativedelta(years=11)).strftime('%Y-04-03 %H:%M')"/>
+            <field name="gender">female</field>
+            <field name="roll_no">1</field>
+            <field name="school_id" ref="demo_school_1"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="city">Yangon</field>
+            <field name="standard_id" ref="demo_school_standard_1"/>
+            <field name="division_id" ref="demo_standard_division_1"/>
+            <field name="medium_id" ref="demo_standard_medium_1"/>
         </record>
 
         <!-- Student Parent Information -->

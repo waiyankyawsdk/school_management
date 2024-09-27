@@ -76,7 +76,7 @@
                         <field name="subject_standard_assignment" invisible="1"/>
                     </group>
                 </group>
-                <group string="Submission Format Information" col="4">
+                <group string="Submission Format Information">
                     <field name="type_submission" readonly="state != 'draft'"/>
                     <field name="file_format" invisiblem="type_submission == 'hardcopy')" readonly="state != 'draft'"/>
                 </group>
@@ -122,8 +122,8 @@
                     <button name="active_assignment" class="oe_stat_button fa fa-check" invisible="state not in 'draft'" string="Active"
                             type="object" groups="school.group_school_teacher,school.group_school_administration"/>
                     <button name="done_assignment" class="oe_stat_button fa fa-check" invisible="state not in 'active'" string="Done"
-                            type="object" groups="school.group_school_teacher,school.group_school_administration"/>
-                    <button name="%(assignment.student_homework_reject)d" string="Reject" type="action" invisible="state not in 'active'"
+                            type="object" groups="school.group_school_student,school.group_school_teacher,school.group_school_administration"/>
+                    <button name="%(assignment.student_homework_reject)d" string="Reject" type="action" invisible="state not in ['active','done']"
                             groups="school.group_school_teacher,school.group_school_administration"/>
                     <button name="reassign_assignment" invisible="state not in 'reject'" string="Re-Assign" type="object"
                             groups="school.group_school_teacher, school.group_school_administration"/>
@@ -149,10 +149,10 @@
                     <group string="Upload / Download Attachments">
                         <field name="attached_homework" placeholder="Attachment File" readonly="state != 'draft'"/>
                     </group>
-                    <group string="Submission Details" col="4">
+                    <group string="Submission Details">
                         <field name="submission_type" readonly="state != 'draft'"/>
                         <field name="attachfile_format" placeholder="e.g. docx" invisible="submission_type == 'hardcopy'" readonly="state != 'draft'"/>
-                        <field name="submit_assign" filename="file_name" invisible="submission_type == 'hardcopy'" readonly="state != 'draft'"/>
+                        <field name="submit_assign" filename="file_name" invisible="submission_type == 'hardcopy'" readonly="state != 'active'"/>
                         <field name="file_name" invisible="1"/>
                     </group>
                     <group string="Reject Assignment" invisible="state in ['draft','active','done']">
