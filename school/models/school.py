@@ -313,7 +313,6 @@ class SchoolStandard(models.Model):
     division_id = fields.Many2one(
         "standard.division",
         "Division",
-        required=True,
         store=True,
         help="Standard division",
     )
@@ -419,7 +418,7 @@ class SchoolStandard(models.Model):
             if record.standard_id and record.division_id:
                 standard_name = record.standard_id.name if record.standard_id else ''
                 division_name = record.division_id.name if record.division_id else ''
-                record.standard_combine = f"{standard_name}[{division_name}]".strip()
+                record.standard_combine = f"{standard_name}/{division_name}".strip()
             else:
                 record.standard_combine = False  # In case either field is missing
 

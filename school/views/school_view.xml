@@ -244,7 +244,7 @@
         <field name="name">school.standard.tree</field>
         <field name="model">school.standard</field>
         <field name="arch" type="xml">
-            <tree string="Standard Information" editable="bottom">
+            <tree string="Standard Information" >
                 <field name="standard_combine"/>
                 <field name="user_ids" widget="many2many_tags"/>
                 <field name="division_id"/>
@@ -986,7 +986,7 @@
     <!-- MenuItem For Configurations->Subject -->
     <menuitem id="menu_subject_subject_form" name="Subjects" parent="menu_configuration" sequence="10" />
     <menuitem id="menu_subject_subject_sub_form" name="Subjects" parent="menu_subject_subject_form" action="action_subject_subject_form" />
-    <menuitem id="menu_subject_elective_form" name="Elective Subject(s)" parent="menu_subject_subject_form" action="action_elective_subject_form" />
+<!--    <menuitem id="menu_subject_elective_form" name="Elective Subject(s)" parent="menu_subject_subject_form" action="action_elective_subject_form" />-->
     <!-- Menuitem of alumni and terminate -->
     <menuitem id="menu_student_alumni" name="Alumni/Terminate" action="action_student_alumni" parent="menu_admission_form_root" groups="school.group_school_administration,school.group_school_teacher" sequence="2"/>
     <menuitem

@@ -9,17 +9,10 @@ class SchoolTeacherAssignment(models.Model):
 
     _name = "school.teacher.assignment"
     _description = "Teacher Assignment Information"
-    _rec_name = 'assignment_name'
 
-    # Add a computed name field, using the assignment_name
-    name = fields.Char(
-        string="Name",
-        compute='_compute_name',
-        store=True
-    )
-    assignment_name = fields.Char("Assignment Name", help="Name of Assignment",store=True)
+    name = fields.Char("Assignment Name", help="Name of Assignment")
     subject_id = fields.Many2one(
-        "subject.subject","Subject", required=True, help="Select Subject"
+        "subject.subject", "Subject", required=True, help="Select Subject"
     )
     standard_id = fields.Many2one(
         "school.standard", "Class", help="Select Standard"
@@ -63,11 +56,6 @@ class SchoolTeacherAssignment(models.Model):
         help="""Standard of the assignment in which it assigned""",
     )
 
-    # @api.depends('assignment_name')
-    # def _compute_name(self):
-    #     for rec in self:
-    #         rec.name = rec.assignment_name  # Assign assignment_name to the name field
-
     @api.onchange("standard_id")
     def onchange_subject_standard(self):
         """Onchange method to assign assignment based on standard"""
@@ -100,7 +88,7 @@ class SchoolTeacherAssignment(models.Model):
             ):
                 assignment_rec = assignment_obj.create(
                     {
-                        "name": rec.assignment_name,
+                        "name": rec.name,
                         "subject_id": rec.subject_id.id,
                         "standard_id": rec.standard_id.id,
                         "assign_date": rec.assign_date,
@@ -127,13 +115,13 @@ class SchoolTeacherAssignment(models.Model):
                 )
             rec.state = "active"
 
-    def draft_assignments(self):
-        """Changes the state to draft"""
-        self.state = "draft"
-
     def done_assignments(self):
         """Changes the state to done"""
         self.state = "done"
+
+    def draft_assignments(self):
+        """Changes the state to done"""
+        self.state = "draft"
 
     # def unlink(self):
     #     """Inherited unlink method to give warning on record deletion"""
@@ -150,22 +138,9 @@ class SchoolStudentAssignment(models.Model):
 
     _name = "school.student.assignment"
     _description = "Student Assignment Information"
-    _rec_name = 'assignment_names'
+    _rec = "name"
 
-    # Add a computed name field, using the assignment_name
-    name = fields.Char(
-        string="Name",
-        compute='_compute_name',
-        store=True
-    )
-    # Link to the teacher assignment model using Many2one
-    assignment_names = fields.Many2one(
-        "school.teacher.assignment",  # Reference to the model
-        string="Assignment Name",
-        help="Assignment Name",
-        store=True
-    )
-
+    name = fields.Char("Assignment Name", help="Assignment Name")
     subject_id = fields.Many2one(
         "subject.subject", "Subject", required=True, help="Select Subject"
     )
@@ -227,11 +202,6 @@ class SchoolStudentAssignment(models.Model):
     active = fields.Boolean(
         "Active", default=True, help="Activate/Deactivate assignment"
     )
-
-    @api.depends('assignment_names')
-    def _compute_name(self):
-        for rec in self:
-            rec.name = rec.assignment_names  # Assign assignment_name to the name field
 
     @api.constrains("assign_date", "due_date")
     def check_date(self):

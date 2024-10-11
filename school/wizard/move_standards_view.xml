@@ -29,6 +29,6 @@
     </record>
 
     <!-- MenuItem For Configurations->Move Classes -->
-    <menuitem id="menu_move_standards_form" name="Move Classes" parent="menu_configuration" action="action_move_standards_form" />
+<!--    <menuitem id="menu_move_standards_form" name="Move Classes" parent="menu_configuration" action="action_move_standards_form" />-->
 
 </odoo>
